@@ -55,32 +55,32 @@ public class ThreadInterrupter {
         t1.interrupt();
         System.out.println(t1.isInterrupted());*/
 
-        Thread t1 = new Thread(){
-            @Override
-            public void run() {
-                try {
-                    while (true) {
-                        // System.out.println(">>" + this.isInterrupted());
-                    }
-                } catch (Exception e) {
-                    e.printStackTrace();
+        Thread t1 = new Thread(() -> {
+            try {
+                while (true) {
+                    // System.out.println(">>" + this.isInterrupted());
                 }
+            } catch (Exception e) {
+                e.printStackTrace();
             }
-        };
+        });
 
         Thread main = Thread.currentThread();
-        Thread t2 = new Thread(){
-            @Override
-            public void run() {
-                try {
-                    Thread.sleep(200);
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
-                }
-                main.interrupt();
-                System.out.println(main.isInterrupted());
+        Thread t2 = new Thread(() -> {
+            try {
+                Thread.sleep(200);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
             }
-        };
+            main.interrupt();
+            try {
+                Thread.sleep(100);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+            System.out.println(main.isInterrupted());
+        });
+
         t1.start();
         t2.start();
         try {
@@ -88,5 +88,8 @@ public class ThreadInterrupter {
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
+
+        System.out.println("main:" + main.isInterrupted());
+        System.out.println("主线程结束");
     }
 }
