@@ -1,4 +1,4 @@
-package com.sen.concurrency3.juc.collections;
+package com.sen.concurrency3.juc.collections.custom;
 
 import java.util.Random;
 /**

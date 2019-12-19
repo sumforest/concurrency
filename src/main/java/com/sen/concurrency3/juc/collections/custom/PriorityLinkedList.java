@@ -1,23 +1,23 @@
-package com.sen.concurrency3.juc.collections;
+package com.sen.concurrency3.juc.collections.custom;
 
 /**
  * @Auther: Sen
  * @Date: 2019/12/18 22:11
  * @Description:
  */
-public class LinkedList<T> {
+public class PriorityLinkedList<T extends Comparable<T>> {
 
     private Node<T> root;
 
     private int size = 0;
 
-    public void of(T ... ts) {
+    public void of(T... ts) {
         for (T t : ts) {
             addFirst(t);
         }
     }
 
-    public boolean contains(T t){
+    public boolean contains(T t) {
         Node<T> current = root;
         while (current != null) {
             if (t == current.t)
@@ -27,34 +27,45 @@ public class LinkedList<T> {
         return false;
     }
 
-    public boolean isEmpty(){
+    public boolean isEmpty() {
         return size == 0;
     }
 
-    public int size(){
+    public int size() {
         return size;
     }
 
-    public LinkedList<T> addFirst(T t){
+    public PriorityLinkedList<T> addFirst(T t) {
         Node<T> newNode = new Node<>(t);
-        if (root == null)
+        Node<T> pre = null;
+        Node<T> current = root;
+        if (root == null){
             root = newNode;
-        else {
-            Node<T> temp = root;
+            return this;
+        }
+        while (current != null && t.compareTo(current.t) > 0) {
+            pre = current;
+            current = current.next;
+        }
+        if (pre == null) {
+            newNode.next = root;
             root = newNode;
-            root.next = temp;
+        } else {
+            Node<T> temp = pre.next;
+            pre.next = newNode;
+            newNode.next = temp;
         }
         size++;
         return this;
     }
 
-    public Node<T> removeFirst(){
+    public Node<T> removeFirst() {
         Node<T> temp = root;
         root = root.next;
         return temp;
     }
 
-    public String toString(){
+    public String toString() {
         if (isEmpty())
             return "[]";
         else {
@@ -64,16 +75,16 @@ public class LinkedList<T> {
                 builder.append(current.t).append(" ,");
                 current = current.next;
             }
-            builder.replace(builder.length()-1, builder.length(), "]");
+            builder.replace(builder.length() - 1, builder.length(), "]");
             return builder.toString();
         }
     }
 
-    private static class Node<T>{
+    private static class Node<T> {
 
         private T t;
 
-        private  Node<T> next;
+        private Node<T> next;
 
         private Node(T t) {
             this.t = t;
@@ -81,16 +92,8 @@ public class LinkedList<T> {
     }
 
     public static void main(String[] args) {
-        final LinkedList<String> linkedList = new LinkedList<>();
-        linkedList.of("Java","C","C++","Scala","GO");
-        linkedList.addFirst("Ruby").addFirst("Python");
-        System.out.println(linkedList.size());
-        System.out.println(linkedList.isEmpty());
-        System.out.println(linkedList.contains("Jav"));
-        System.out.println(linkedList.toString());
-        System.out.println(linkedList.removeFirst().t);
-        System.out.println(linkedList.removeFirst().t);
-        System.out.println(linkedList.removeFirst().t);
-        System.out.println(linkedList.toString());
+        final PriorityLinkedList<Integer> list = new PriorityLinkedList<>();
+        list.of(6, 2, 63, -3, 11, 4, 5);
+        System.out.println(list.toString());
     }
 }

@@ -74,7 +74,7 @@ public class ExecutorsExample1 {
      * of programs that execute many short-lived asynchronous tasks.
      * new ThreadPoolExecutor(0, Integer.MAX_VALUE,
      *          60L, TimeUnit.SECONDS,
-     *          new SynchronousQueue<Runnable>());
+     *          new SynchronousQueueExample<Runnable>());
      *  1.使用CacheThreadPool注意任务的数量和执行的时间，过多的任务和过长的执行时间会导致虚拟机栈溢出
      *  2.任务执行完后60s自动关闭
      */
