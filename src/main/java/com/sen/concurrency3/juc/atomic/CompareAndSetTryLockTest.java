@@ -1,7 +1,7 @@
 package com.sen.concurrency3.juc.atomic;
 
 /**
- * @Auther: Sen
+ * @Author: Sen
  * @Date: 2019/12/14 22:09
  * @Description:
  */

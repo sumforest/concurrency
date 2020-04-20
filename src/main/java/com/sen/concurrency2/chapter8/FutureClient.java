@@ -2,7 +2,7 @@ package com.sen.concurrency2.chapter8;
 
 
 /**
- * @Auther: Sen
+ * @Author: Sen
  * @Date: 2019/12/10 00:57
  * @Description: Future设计模式
  * Future        --> 未来的凭据

@@ -11,7 +11,7 @@ import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;
 
 /**
- * @Auther: Sen
+ * @Author: Sen
  * @Date: 2019/12/15 15:33
  * @Description:
  */

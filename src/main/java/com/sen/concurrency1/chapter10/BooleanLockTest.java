@@ -3,9 +3,9 @@ package com.sen.concurrency1.chapter10;
 import java.util.stream.Stream;
 
 /**
- * @Auther: Sen
+ * @Author: Sen
  * @Date: 2019/12/8 01:32
- * @Description:
+ * @Description: 自定义一个显示锁，不可重入
  */
 public class BooleanLockTest {
 

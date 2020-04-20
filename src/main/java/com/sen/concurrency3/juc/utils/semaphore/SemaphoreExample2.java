@@ -4,7 +4,7 @@ import java.util.concurrent.Semaphore;
 import java.util.concurrent.TimeUnit;
 
 /**
- * @Auther: Sen
+ * @Author: Sen
  * @Date: 2019/12/16 01:42
  * @Description:
  */

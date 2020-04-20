@@ -4,7 +4,7 @@ import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.TimeUnit;
 
 /**
- * @Auther: Sen
+ * @Author: Sen
  * @Date: 2019/12/15 19:42
  * @Description:
  */

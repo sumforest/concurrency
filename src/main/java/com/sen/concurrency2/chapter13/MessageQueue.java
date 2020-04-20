@@ -4,7 +4,7 @@ import java.util.LinkedList;
 import java.util.concurrent.atomic.AtomicInteger;
 
 /**
- * @Auther: Sen
+ * @Author: Sen
  * @Date: 2019/12/10 22:11
  * @Description:
  */

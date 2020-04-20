@@ -1,7 +1,7 @@
 package com.sen.concurrency1.chapter2;
 
 /**
- * @Auther: Sen
+ * @Author: Sen
  * @Date: 2019/12/6 20:00
  * @Description: 税务计数器（仿照Runnable接口的策略模式）
  */

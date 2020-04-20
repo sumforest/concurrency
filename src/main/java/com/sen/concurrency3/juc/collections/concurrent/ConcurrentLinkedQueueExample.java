@@ -3,7 +3,7 @@ package com.sen.concurrency3.juc.collections.concurrent;
 import java.util.concurrent.ConcurrentLinkedQueue;
 
 /**
- * @Auther: Sen
+ * @Author: Sen
  * @Date: 2019/12/20 13:55
  * @Description:
  */

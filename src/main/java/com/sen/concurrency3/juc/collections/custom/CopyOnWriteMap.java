@@ -7,7 +7,7 @@ import java.util.Set;
 import java.util.concurrent.locks.ReentrantLock;
 
 /**
- * @Auther: Sen
+ * @Author: Sen
  * @Date: 2019/12/20 14:34
  * @Description:
  */

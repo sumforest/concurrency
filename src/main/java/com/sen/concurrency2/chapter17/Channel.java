@@ -5,7 +5,7 @@ import java.util.Arrays;
 import java.util.stream.IntStream;
 
 /**
- * @Auther: Sen
+ * @Author: Sen
  * @Date: 2019/12/11 01:32
  * @Description:
  */

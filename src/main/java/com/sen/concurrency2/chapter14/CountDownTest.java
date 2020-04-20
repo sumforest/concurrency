@@ -5,7 +5,7 @@ import java.util.concurrent.CountDownLatch;
 import java.util.stream.IntStream;
 
 /**
- * @Auther: Sen
+ * @Author: Sen
  * @Date: 2019/12/10 22:52
  * @Description:
  */

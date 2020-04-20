@@ -5,7 +5,7 @@ import java.util.concurrent.atomic.AtomicInteger;
 import java.util.stream.IntStream;
 
 /**
- * @Auther: Sen
+ * @Author: Sen
  * @Date: 2019/12/17 16:51
  * @Description:
  */

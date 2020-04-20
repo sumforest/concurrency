@@ -10,7 +10,7 @@ import java.util.concurrent.atomic.AtomicReference;
 import java.util.stream.IntStream;
 
 /**
- * @Auther: Sen
+ * @Author: Sen
  * @Date: 2019/12/20 17:16
  * @Description: 无锁队列（基于原子类型实现）
  */

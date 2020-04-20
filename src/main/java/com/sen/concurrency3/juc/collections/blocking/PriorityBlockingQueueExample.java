@@ -4,7 +4,7 @@ import java.util.Comparator;
 import java.util.concurrent.PriorityBlockingQueue;
 
 /**
- * @Auther: Sen
+ * @Author: Sen
  * @Date: 2019/12/19 16:21
  * @Description:
  */

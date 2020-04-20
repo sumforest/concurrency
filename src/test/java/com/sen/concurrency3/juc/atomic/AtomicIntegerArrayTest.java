@@ -5,7 +5,7 @@ import org.junit.Test;
 import java.util.concurrent.atomic.AtomicIntegerArray;
 
 /**
- * @Auther: Sen
+ * @Author: Sen
  * @Date: 2019/12/15 01:55
  * @Description:
  */

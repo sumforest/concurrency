@@ -3,9 +3,11 @@ package com.sen.concurrency1.chapter9;
 import java.util.stream.Stream;
 
 /**
- * @Auther: Sen
+ * @Author: Sen
  * @Date: 2019/12/7 22:47
- * @Description:
+ * @Description: 区分 {@code sleep()} 与 {@code sleep()}
+ * sleep：释放CPU时间片，不会释放监视器（锁）
+ * wait: 释放CPU时间片，释放监视器（锁）
  */
 public class DifferenceOfSleepAndWait {
 
@@ -34,21 +36,24 @@ public class DifferenceOfSleepAndWait {
     }
 
     public static void main(String[] args) {
-        // m1();
         // m2();
-     /*   Stream.of("T1","T2").forEach(name->new Thread(name){
+        // m1();
+
+        //只有t1可执行
+        /*Stream.of("T1","T2").forEach(name->new Thread(name){
             @Override
             public void run() {
                 m1();
             }
         }.start());*/
 
-        Stream.of("T1","T2").forEach(name->new Thread(name){
+        //t1、t2均可执行
+       /* Stream.of("T1","T2").forEach(name->new Thread(name){
             @Override
             public void run() {
                 m2();
             }
-        }.start());
+        }.start());*/
 
     }
 }

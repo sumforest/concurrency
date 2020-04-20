@@ -3,10 +3,10 @@ package com.sen.concurrency1.chapter6;
 import java.util.Optional;
 
 /**
- * @Auther: Sen
+ * @Author: Sen
  * @Date: 2019/12/7 15:10
- * @Description: 停止线程的方法2
- * 调用interrupt方法
+ * @Description: 优雅停止线程的方法2
+ * 调用 {@code interrupt()} 方法,捕获异常处理实现停止线程
  */
 public class ThreadCloseGraceful2 {
 

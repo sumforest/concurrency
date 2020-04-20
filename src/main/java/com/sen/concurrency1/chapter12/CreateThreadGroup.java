@@ -3,9 +3,9 @@ package com.sen.concurrency1.chapter12;
 import java.util.Arrays;
 
 /**
- * @Auther: Sen
+ * @Author: Sen
  * @Date: 2019/12/8 15:23
- * @Description:
+ * @Description: 创建线程组
  */
 public class CreateThreadGroup {
 

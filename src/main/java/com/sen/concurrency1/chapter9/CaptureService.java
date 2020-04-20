@@ -1,19 +1,26 @@
 package com.sen.concurrency1.chapter9;
 
 import java.util.*;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
 import java.util.stream.Stream;
 
 /**
- * @Auther: Sen
+ * @Author: Sen
  * @Date: 2019/12/8 00:19
- * @Description: 指定数量的线程进行数据采集模拟,避免创建过多线程导致效率低下
+ * @Description: 指定数量的线程进行数据采集模拟,避免创建过多线程导致效率低下;后面可以用
+ * 线程池解决
  */
 public class CaptureService {
 
-
-    //用于加锁和控制线程大小
+    /**
+     * 用于加锁和控制线程大小
+     */
     private final static LinkedList<Control> CONTROL = new LinkedList<>();
 
+    /**
+     * 最大并发的线程数量
+     */
     private final static int MAX_THREAD = 5;
 
     public static void main(String[] args) {
@@ -26,14 +33,21 @@ public class CaptureService {
 
         queue.forEach(t-> {
             try {
+                //让父线程等待工作线程完成
                 t.join();
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
         });
+
         Optional.of("All capture task work finished").ifPresent(System.out::println);
     }
 
+    /**
+     * 创建采集工作线程
+     * @param name 线程名
+     * @return 采集线程
+     */
     private static Thread createCaptureThread(String name) {
         return new Thread(() -> {
             synchronized (CONTROL){
@@ -59,6 +73,7 @@ public class CaptureService {
             Optional.of(Thread.currentThread().getName() + " finish to capture data->end")
                     .ifPresent(System.out::println);
             CONTROL.removeFirst();
+            //一个工作线程完成后唤醒在创建任务阻塞的线程
             synchronized (CONTROL) {
                 CONTROL.notifyAll();
             }

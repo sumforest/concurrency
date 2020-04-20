@@ -1,7 +1,7 @@
 package com.sen.concurrency1.chapter3;
 
 /**
- * @Auther: Sen
+ * @Author: Sen
  * @Date: 2019/12/6 23:43
  * @Description: 测试虚拟机栈的大小和线程构造参数的stackSize的关系
  */

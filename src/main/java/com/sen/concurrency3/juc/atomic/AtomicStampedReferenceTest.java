@@ -4,7 +4,7 @@ import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicStampedReference;
 
 /**
- * @Auther: Sen
+ * @Author: Sen
  * @Date: 2019/12/15 01:25
  * @Description: 解决原子类型的ABA问题
  */

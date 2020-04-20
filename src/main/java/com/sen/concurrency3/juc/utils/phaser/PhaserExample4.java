@@ -4,7 +4,7 @@ import java.util.concurrent.Phaser;
 import java.util.concurrent.TimeUnit;
 
 /**
- * @Auther: Sen
+ * @Author: Sen
  * @Date: 2019/12/16 19:23
  * @Description:
  */

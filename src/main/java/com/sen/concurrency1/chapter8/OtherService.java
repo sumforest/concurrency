@@ -1,7 +1,7 @@
 package com.sen.concurrency1.chapter8;
 
 /**
- * @Auther: Sen
+ * @Author: Sen
  * @Date: 2019/12/7 19:02
  * @Description:
  */

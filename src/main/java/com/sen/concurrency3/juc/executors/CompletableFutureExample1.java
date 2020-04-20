@@ -6,7 +6,7 @@ import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 
 /**
- * @Auther: Sen
+ * @Author: Sen
  * @Date: 2019/12/18 15:17
  * @Description:
  */

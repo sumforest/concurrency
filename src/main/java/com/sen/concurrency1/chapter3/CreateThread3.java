@@ -1,7 +1,7 @@
 package com.sen.concurrency1.chapter3;
 
 /**
- * @Auther: Sen
+ * @Author: Sen
  * @Date: 2019/12/6 23:13
  * @Description: 测试Thread构造方法参数stackSize堆虚拟机栈大小的影响
  */

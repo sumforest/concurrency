@@ -13,7 +13,7 @@ import static org.junit.Assert.assertThat;
 import static org.junit.Assert.fail;
 
 /**
- * @Auther: Sen
+ * @Author: Sen
  * @Date: 2019/12/19 16:27
  * @Description:
  */

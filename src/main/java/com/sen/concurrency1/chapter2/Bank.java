@@ -1,9 +1,9 @@
 package com.sen.concurrency1.chapter2;
 
 /**
- * @Auther: Sen
+ * @Author: Sen
  * @Date: 2019/12/6 19:09
- * @Description:
+ * @Description: 模拟银行窗口
  */
 public class Bank {
 

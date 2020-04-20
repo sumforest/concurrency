@@ -4,7 +4,7 @@ import java.util.Arrays;
 import java.util.Random;
 
 /**
- * @Auther: Sen
+ * @Author: Sen
  * @Date: 2019/12/9 20:39
  * @Description:
  */

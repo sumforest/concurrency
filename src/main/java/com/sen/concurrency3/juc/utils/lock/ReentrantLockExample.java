@@ -5,7 +5,7 @@ import java.util.concurrent.TimeUnit;
 import java.util.concurrent.locks.ReentrantLock;
 
 /**
- * @Auther: Sen
+ * @Author: Sen
  * @Date: 2019/12/16 02:50
  * @Description:
  */

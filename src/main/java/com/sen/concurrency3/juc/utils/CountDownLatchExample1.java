@@ -7,7 +7,7 @@ import java.util.concurrent.Executors;
 import java.util.concurrent.TimeUnit;
 
 /**
- * @Auther: Sen
+ * @Author: Sen
  * @Date: 2019/12/15 18:47
  * @Description:
  */

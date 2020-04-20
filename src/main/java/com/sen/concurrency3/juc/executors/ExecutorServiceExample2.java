@@ -6,7 +6,7 @@ import java.util.concurrent.TimeUnit;
 import java.util.stream.IntStream;
 
 /**
- * @Auther: Sen
+ * @Author: Sen
  * @Date: 2019/12/17 17:38
  * @Description: 线程池四大拒绝策略
  */

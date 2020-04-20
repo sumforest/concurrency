@@ -6,7 +6,7 @@ import java.util.concurrent.Phaser;
 import java.util.concurrent.TimeUnit;
 
 /**
- * @Auther: Sen
+ * @Author: Sen
  * @Date: 2019/12/16 18:43
  * @Description: 计数器可重复使用
  */

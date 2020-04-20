@@ -3,7 +3,7 @@ package com.sen.concurrency3.juc.utils.exchange;
 import java.util.concurrent.Exchanger;
 
 /**
- * @Auther: Sen
+ * @Author: Sen
  * @Date: 2019/12/16 00:50
  * @Description: Exchanger两个线程间传递的是内存地址（同一个对象），一个线程对其修改会影响到另一个线程的值。
  */

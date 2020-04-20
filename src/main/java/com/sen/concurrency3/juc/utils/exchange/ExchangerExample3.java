@@ -5,7 +5,7 @@ import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicInteger;
 
 /**
- * @Auther: Sen
+ * @Author: Sen
  * @Date: 2019/12/16 00:57
  * @Description:
  */

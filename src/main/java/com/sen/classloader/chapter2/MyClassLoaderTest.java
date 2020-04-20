@@ -3,7 +3,7 @@ package com.sen.classloader.chapter2;
 import java.lang.reflect.Method;
 
 /**
- * @Auther: Sen
+ * @Author: Sen
  * @Date: 2019/12/11 22:19
  * @Description:
  */

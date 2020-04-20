@@ -4,7 +4,7 @@ import java.util.concurrent.Exchanger;
 import java.util.concurrent.TimeUnit;
 
 /**
- * @Auther: Sen
+ * @Author: Sen
  * @Date: 2019/12/16 00:30
  * @Description: exchange：
  * 1.当前线程已经运行到exchange（）是，另外一个线程还没准备好数据给当前线程；那么当前线程就会陷入阻塞状态，

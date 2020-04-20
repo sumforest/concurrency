@@ -3,7 +3,7 @@ package com.sen.concurrency3.juc.utils;
 import java.util.concurrent.CountDownLatch;
 
 /**
- * @Auther: Sen
+ * @Author: Sen
  * @Date: 2019/12/15 19:35
  * @Description:
  */

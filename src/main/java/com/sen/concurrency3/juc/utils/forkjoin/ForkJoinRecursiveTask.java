@@ -7,7 +7,7 @@ import java.util.concurrent.RecursiveTask;
 import java.util.stream.IntStream;
 
 /**
- * @Auther: Sen
+ * @Author: Sen
  * @Date: 2019/12/16 17:02
  * @Description:
  */
@@ -34,9 +34,9 @@ public class ForkJoinRecursiveTask {
 
         @Override
         protected Integer compute() {
-            if ((end - start) <= MAX_DEFAULT)
+            if ((end - start) <= MAX_DEFAULT) {
                 return IntStream.rangeClosed(start, end).sum();
-            else {
+            } else {
                 int middle = (end + start) / 2;
                 CalculateRecursiveTask left = new CalculateRecursiveTask(start, middle);
                 CalculateRecursiveTask right = new CalculateRecursiveTask(middle + 1, end);

@@ -4,7 +4,7 @@ import java.io.*;
 import java.net.Socket;
 
 /**
- * @Auther: Sen
+ * @Author: Sen
  * @Date: 2019/12/11 00:41
  * @Description:
  */

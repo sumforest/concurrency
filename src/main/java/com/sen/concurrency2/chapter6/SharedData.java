@@ -1,7 +1,7 @@
 package com.sen.concurrency2.chapter6;
 
 /**
- * @Auther: Sen
+ * @Author: Sen
  * @Date: 2019/12/9 20:16
  * @Description: 共享资源
  */

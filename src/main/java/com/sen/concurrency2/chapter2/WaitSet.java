@@ -4,9 +4,9 @@ import java.util.stream.IntStream;
 import java.util.stream.Stream;
 
 /**
- * @Auther: Sen
+ * @Author: Sen
  * @Date: 2019/12/8 23:24
- * @Description: 多线程的休息室
+ * @Description: 多线程的休息室，调用 {@code wait()} 的线程会进入waitSet等待队列
  */
 public class WaitSet {
 
@@ -26,13 +26,14 @@ public class WaitSet {
     }
 
     public static void main(String[] args) throws InterruptedException {
-        new Thread(WaitSet::test).start();
+
+        /*new Thread(WaitSet::test).start();
         Thread.sleep(3000);
         synchronized (LOCK) {
             LOCK.notify();
-        }
-    }
-        /*IntStream.rangeClosed(1, 10).forEach(i->new Thread(String.valueOf(i)){
+        }*/
+
+        IntStream.rangeClosed(1, 10).forEach(i->new Thread(String.valueOf(i)){
             @Override
             public void run() {
                 synchronized (LOCK) {
@@ -54,5 +55,5 @@ public class WaitSet {
                 LOCK.notify();
             }
         });
-    */
+    }
 }

@@ -1,7 +1,7 @@
 package com.sen.concurrency2.chapter8;
 
 /**
- * @Auther: Sen
+ * @Author: Sen
  * @Date: 2019/12/10 00:33
  * @Description: 同步阻塞调用
  */

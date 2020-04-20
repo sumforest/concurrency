@@ -1,9 +1,9 @@
 package com.sen.concurrency1.chapter2;
 
 /**
- * @Auther: Sen
+ * @Author: Sen
  * @Date: 2019/12/6 19:21
- * @Description:
+ * @Description: 模拟票据窗口，实现{@link Runnable}重写实现{@code run()}创建线程
  */
 public class TicketRunnable implements Runnable {
 
@@ -11,6 +11,7 @@ public class TicketRunnable implements Runnable {
 
     private static   int index = 1;
 
+    @Override
     public void run() {
         while (index <= MAX) {
             System.out.println("当前窗口：" + Thread.currentThread().getName() + index++);

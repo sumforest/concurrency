@@ -4,7 +4,7 @@ import java.util.Random;
 import java.util.concurrent.atomic.AtomicInteger;
 
 /**
- * @Auther: Sen
+ * @Author: Sen
  * @Date: 2019/12/10 22:20
  * @Description:
  */

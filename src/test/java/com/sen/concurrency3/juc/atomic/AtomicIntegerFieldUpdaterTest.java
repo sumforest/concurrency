@@ -6,7 +6,7 @@ import java.util.concurrent.atomic.AtomicIntegerFieldUpdater;
 import java.util.concurrent.atomic.AtomicReferenceFieldUpdater;
 
 /**
- * @Auther: Sen
+ * @Author: Sen
  * @Date: 2019/12/15 02:27
  * @Description:
  */

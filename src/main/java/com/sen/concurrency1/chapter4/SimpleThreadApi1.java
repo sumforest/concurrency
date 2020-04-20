@@ -3,9 +3,10 @@ package com.sen.concurrency1.chapter4;
 import java.util.Optional;
 
 /**
- * @Auther: Sen
+ * @Author: Sen
  * @Date: 2019/12/7 01:54
- * @Description:
+ * @Description: {@link Thread} {@code getPriority()}获取权重
+ * {@link Optional}容器类防止空指针
  */
 public class SimpleThreadApi1 {
 

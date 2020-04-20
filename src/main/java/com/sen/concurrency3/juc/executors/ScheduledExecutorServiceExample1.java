@@ -4,7 +4,7 @@ import java.util.concurrent.*;
 import java.util.concurrent.atomic.AtomicLong;
 
 /**
- * @Auther: Sen
+ * @Author: Sen
  * @Date: 2019/12/18 01:10
  * @Description:
  */

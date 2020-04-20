@@ -8,7 +8,7 @@ import java.util.stream.IntStream;
 import static java.util.stream.Collectors.toList;
 
 /**
- * @Auther: Sen
+ * @Author: Sen
  * @Date: 2019/12/17 02:47
  * @Description:
  */

@@ -4,7 +4,7 @@ import java.util.concurrent.*;
 import java.util.concurrent.atomic.AtomicBoolean;
 
 /**
- * @Auther: Sen
+ * @Author: Sen
  * @Date: 2019/12/17 22:30
  * @Description:
  */

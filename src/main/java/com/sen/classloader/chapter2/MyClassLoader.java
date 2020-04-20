@@ -4,7 +4,7 @@ import java.io.ByteArrayOutputStream;
 import java.io.FileInputStream;
 
 /**
- * @Auther: Sen
+ * @Author: Sen
  * @Date: 2019/12/11 22:09
  * @Description:
  */

@@ -3,7 +3,7 @@ package com.sen.concurrency2.chapter15;
 import java.util.stream.IntStream;
 
 /**
- * @Auther: Sen
+ * @Author: Sen
  * @Date: 2019/12/10 23:28
  * @Description:
  */

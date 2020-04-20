@@ -2,9 +2,9 @@ package com.sen.concurrency1.chapter7;
 
 
 /**
- * @Auther: Sen
+ * @Author: Sen
  * @Date: 2019/12/6 19:09
- * @Description:
+ * @Description: 使用
  */
 public class Bank {
 

@@ -10,7 +10,7 @@ import java.util.concurrent.locks.StampedLock;
 import java.util.stream.Collectors;
 
 /**
- * @Auther: Sen
+ * @Author: Sen
  * @Date: 2019/12/16 16:02
  * @Description:
  */

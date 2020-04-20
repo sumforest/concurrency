@@ -1,7 +1,7 @@
 package com.sen.concurrency1.chapter7;
 
 /**
- * @Auther: Sen
+ * @Author: Sen
  * @Date: 2019/12/6 19:21
  * @Description:
  */
@@ -11,7 +11,10 @@ public class TicketRunnableSychronized implements Runnable {
 
     private int index = 1;
 
-    //锁定的是this
+    /**
+     * 锁定的是this
+     */
+    @Override
     public void run() {
         while (true) {
             if (syn()) {
@@ -22,8 +25,9 @@ public class TicketRunnableSychronized implements Runnable {
 
     private synchronized boolean syn() {
         //get Filed
-        if (index > MAX)
+        if (index > MAX) {
             return true;
+        }
         //get Filed index
         //index = index + 1;
         //put Filed index

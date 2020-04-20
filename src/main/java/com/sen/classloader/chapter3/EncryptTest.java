@@ -1,7 +1,7 @@
 package com.sen.classloader.chapter3;
 
 /**
- * @Auther: Sen
+ * @Author: Sen
  * @Date: 2019/12/12 00:21
  * @Description:
  */

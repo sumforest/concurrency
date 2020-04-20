@@ -1,7 +1,7 @@
 package com.sen.concurrency1.chapter11;
 
 /**
- * @Auther: Sen
+ * @Author: Sen
  * @Date: 2019/12/8 14:47
  * @Description: 外部捕获线程运行时异常
  */

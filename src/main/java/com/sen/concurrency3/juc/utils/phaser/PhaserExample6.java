@@ -8,7 +8,7 @@ import java.util.regex.Pattern;
 import java.util.stream.IntStream;
 
 /**
- * @Auther: Sen
+ * @Author: Sen
  * @Date: 2019/12/16 22:24
  * @Description: awaitAdvance()阶段与当前Phaser相同阻塞，否则立即返回
  */

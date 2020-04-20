@@ -1,7 +1,7 @@
 package com.sen.concurrency3.juc.collections.custom;
 
 /**
- * @Auther: Sen
+ * @Author: Sen
  * @Date: 2019/12/20 15:35
  * @Description: 非线程安全队列
  */

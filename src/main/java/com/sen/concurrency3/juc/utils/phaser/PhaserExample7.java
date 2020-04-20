@@ -6,7 +6,7 @@ import java.util.concurrent.TimeUnit;
 import java.util.concurrent.TimeoutException;
 
 /**
- * @Auther: Sen
+ * @Author: Sen
  * @Date: 2019/12/16 22:48
  * @Description: 打断
  */

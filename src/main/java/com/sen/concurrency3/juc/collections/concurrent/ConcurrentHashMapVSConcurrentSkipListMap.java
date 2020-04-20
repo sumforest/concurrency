@@ -10,7 +10,7 @@ import java.util.concurrent.*;
 import java.util.concurrent.atomic.AtomicInteger;
 
 /**
- * @Auther: Sen
+ * @Author: Sen
  * @Date: 2019/12/20 03:05
  * @Description:
  */

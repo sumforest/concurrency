@@ -1,7 +1,7 @@
 package com.sen.classloader.chapter4;
 
 /**
- * @Auther: Sen
+ * @Author: Sen
  * @Date: 2019/12/12 01:46
  * @Description: 打破类加载的父亲委托机制
  */

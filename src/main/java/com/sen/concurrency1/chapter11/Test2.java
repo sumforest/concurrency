@@ -4,7 +4,7 @@ import java.util.Arrays;
 import java.util.Optional;
 
 /**
- * @Auther: Sen
+ * @Author: Sen
  * @Date: 2019/12/8 14:58
  * @Description: 跟踪线程的堆栈信息
  */

@@ -3,7 +3,7 @@ package com.sen.classloader.chapter1;
 import java.util.concurrent.atomic.AtomicBoolean;
 
 /**
- * @Auther: Sen
+ * @Author: Sen
  * @Date: 2019/12/11 20:07
  * @Description: 验证<clinit>方法是由JVM保证线程安全的
  */

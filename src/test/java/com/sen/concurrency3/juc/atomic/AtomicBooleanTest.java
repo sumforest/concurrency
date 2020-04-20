@@ -6,7 +6,7 @@ import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 
 /**
- * @Auther: Sen
+ * @Author: Sen
  * @Date: 2019/12/14 22:44
  * @Description:
  */

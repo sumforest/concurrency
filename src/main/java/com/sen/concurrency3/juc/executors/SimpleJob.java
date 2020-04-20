@@ -5,7 +5,7 @@ import org.quartz.JobExecutionContext;
 import org.quartz.JobExecutionException;
 
 /**
- * @Auther: Sen
+ * @Author: Sen
  * @Date: 2019/12/17 16:22
  * @Description:
  */

@@ -1,9 +1,9 @@
 package com.sen.concurrency1.chapter4;
 
 /**
- * @Auther: Sen
+ * @Author: Sen
  * @Date: 2019/12/7 00:46
- * @Description:
+ * @Description: 设置守护进程 {@code setDaemon(true)},当只有守护进程运行时JVM退出，程序结束
  */
 public class Daemon1 {
 
@@ -20,6 +20,7 @@ public class Daemon1 {
                 }
             }
         });
+        //设置新建线程为守护线程
         thread.setDaemon(true);
         thread.start();
         Thread.sleep(100);

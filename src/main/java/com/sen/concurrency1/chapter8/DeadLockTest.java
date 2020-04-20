@@ -1,9 +1,9 @@
 package com.sen.concurrency1.chapter8;
 
 /**
- * @Auther: Sen
+ * @Author: Sen
  * @Date: 2019/12/7 19:11
- * @Description:
+ * @Description: 死锁测试，使用jconsole、jstack或者jvisualvm检测
  */
 public class DeadLockTest {
 
@@ -13,13 +13,15 @@ public class DeadLockTest {
         otherService.setDeadLock(deadLock);
 
         new Thread(()->{
-            while (true)
+            while (true) {
                 deadLock.m1();
+            }
         }).start();
 
         new Thread(()->{
-            while (true)
+            while (true) {
                 otherService.s2();
+            }
         }).start();
     }
 }

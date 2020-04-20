@@ -4,7 +4,7 @@ import java.util.concurrent.*;
 import java.util.stream.IntStream;
 
 /**
- * @Auther: Sen
+ * @Author: Sen
  * @Date: 2019/12/17 18:28
  * @Description:
  */

@@ -1,7 +1,7 @@
 package com.sen.concurrency2.chapter1;
 
 /**
- * @Auther: Sen
+ * @Author: Sen
  * @Date: 2019/12/8 22:13
  * @Description: 饿汉式
  */

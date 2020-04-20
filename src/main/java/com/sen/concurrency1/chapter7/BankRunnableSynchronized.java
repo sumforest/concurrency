@@ -3,7 +3,7 @@ package com.sen.concurrency1.chapter7;
 
 
 /**
- * @Auther: Sen
+ * @Author: Sen
  * @Date: 2019/12/6 19:24
  * @Description:
  */

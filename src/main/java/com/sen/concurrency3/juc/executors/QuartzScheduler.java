@@ -7,7 +7,7 @@ import static org.quartz.JobBuilder.newJob;
 import static org.quartz.TriggerBuilder.newTrigger;
 
 /**
- * @Auther: Sen
+ * @Author: Sen
  * @Date: 2019/12/17 16:05
  * @Description:
  */

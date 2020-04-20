@@ -2,7 +2,7 @@ package com.sen.concurrency3.juc.collections.custom;
 
 import java.util.Random;
 /**
- * @Auther: Sen
+ * @Author: Sen
  * @Date: 2019/12/18 23:48
  * @Description: 简单的跳表实现
  */

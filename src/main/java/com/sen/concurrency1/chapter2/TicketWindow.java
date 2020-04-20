@@ -1,9 +1,9 @@
 package com.sen.concurrency1.chapter2;
 
 /**
- * @Auther: Sen
+ * @Author: Sen
  * @Date: 2019/12/6 19:06
- * @Description:
+ * @Description: 模拟票据窗口，继承{@link Thread}重写实现run()创建线程
  */
 public class TicketWindow extends Thread {
 

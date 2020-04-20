@@ -6,7 +6,7 @@ import java.util.concurrent.locks.Condition;
 import java.util.concurrent.locks.ReentrantLock;
 
 /**
- * @Auther: Sen
+ * @Author: Sen
  * @Date: 2019/12/16 14:26
  * @Description:
  */

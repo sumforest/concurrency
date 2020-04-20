@@ -3,15 +3,17 @@ package com.sen.concurrency1.chapter6;
 import java.util.Optional;
 
 /**
- * @Auther: Sen
+ * @Author: Sen
  * @Date: 2019/12/7 15:10
- * @Description: 停止线程的方法1
+ * @Description: 优雅停止线程的方法1
  * 标记方法
  */
 public class ThreadCloseGraceful1 {
 
     private static class Worker extends Thread{
+
         private static volatile boolean start = true;
+
         @Override
         public void run() {
             while (start){

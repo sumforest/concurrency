@@ -7,7 +7,7 @@ import java.util.concurrent.locks.ReentrantLock;
 import java.util.stream.IntStream;
 
 /**
- * @Auther: Sen
+ * @Author: Sen
  * @Date: 2019/12/16 15:17
  * @Description: 使用condition实现多线程下的多生产者消费者
  */

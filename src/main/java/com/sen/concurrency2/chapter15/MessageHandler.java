@@ -6,7 +6,7 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
 /**
- * @Auther: Sen
+ * @Author: Sen
  * @Date: 2019/12/10 23:23
  * @Description:
  */

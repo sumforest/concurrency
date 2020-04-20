@@ -3,7 +3,7 @@ package com.sen.concurrency3.juc.atomic;
 import java.util.concurrent.atomic.AtomicIntegerFieldUpdater;
 
 /**
- * @Auther: Sen
+ * @Author: Sen
  * @Date: 2019/12/15 02:21
  * @Description: 给对象的属性实现原子性
  */

@@ -3,9 +3,11 @@ package com.sen.concurrency1.chapter4;
 import java.util.Optional;
 
 /**
- * @Auther: Sen
+ * @Author: Sen
  * @Date: 2019/12/7 02:01
- * @Description:
+ * @Description: {@link Thread}--{@code setPriority()}测试线程权重对线程获取CPU时间片的影响
+ * 结论：设置权值大小这能让该线程具有较大的机会获取CPU时间片，他们的先后完成任务顺序不一定按照所设定的
+ * 权重那样的顺序完成。
  */
 public class SimpleThreadApi2 {
 
@@ -34,5 +36,10 @@ public class SimpleThreadApi2 {
         t1.start();
         t2.start();
         t3.start();
+    }
+
+    @Override
+    protected void finalize() throws Throwable {
+        super.finalize();
     }
 }

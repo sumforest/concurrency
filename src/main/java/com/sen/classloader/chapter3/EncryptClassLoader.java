@@ -3,7 +3,7 @@ package com.sen.classloader.chapter3;
 import java.io.*;
 
 /**
- * @Auther: Sen
+ * @Author: Sen
  * @Date: 2019/12/12 00:46
  * @Description:
  */

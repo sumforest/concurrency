@@ -3,7 +3,7 @@ package com.sen.concurrency2.chapter8;
 import java.util.function.Consumer;
 
 /**
- * @Auther: Sen
+ * @Author: Sen
  * @Date: 2019/12/10 00:44
  * @Description: Future设计模式核心
  */

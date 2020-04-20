@@ -1,9 +1,9 @@
 package com.sen.concurrency1.chapter5;
 
 /**
- * @Auther: Sen
+ * @Author: Sen
  * @Date: 2019/12/7 02:41
- * @Description:
+ * @Description: 使用 {@code join()} 模拟实现多线程采集集器信息
  */
 public class ThreadJoinDemo {
 

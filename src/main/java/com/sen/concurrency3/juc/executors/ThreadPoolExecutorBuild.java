@@ -3,7 +3,7 @@ package com.sen.concurrency3.juc.executors;
 import java.util.concurrent.*;
 
 /**
- * @Auther: Sen
+ * @Author: Sen
  * @Date: 2019/12/16 23:51
  * @Description:
  */

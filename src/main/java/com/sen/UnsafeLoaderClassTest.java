@@ -1,7 +1,7 @@
 package com.sen;
 
 /**
- * @Auther: Sen
+ * @Author: Sen
  * @Date: 2019/12/15 17:22
  * @Description:
  */

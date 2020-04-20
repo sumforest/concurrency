@@ -1,9 +1,9 @@
 package com.sen.concurrency1.chapter2;
 
 /**
- * @Auther: Sen
+ * @Author: Sen
  * @Date: 2019/12/6 19:24
- * @Description:
+ * @Description: 不加线程控制的三个线程模拟三个银行窗口,出现并发问题
  */
 public class BankRunnable {
     private final static int MAX = 50;

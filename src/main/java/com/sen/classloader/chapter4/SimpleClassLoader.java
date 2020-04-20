@@ -5,7 +5,7 @@ import java.io.FileInputStream;
 import java.util.regex.Pattern;
 
 /**
- * @Auther: Sen
+ * @Author: Sen
  * @Date: 2019/12/11 22:09
  * @Description:
  */

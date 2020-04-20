@@ -3,7 +3,7 @@ package com.sen.concurrency3.juc.atomic;
 import java.util.concurrent.atomic.AtomicInteger;
 
 /**
- * @Auther: Sen
+ * @Author: Sen
  * @Date: 2019/12/14 22:06
  * @Description:
  */

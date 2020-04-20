@@ -8,7 +8,7 @@ import java.util.concurrent.locks.ReentrantLock;
 import java.util.concurrent.locks.ReentrantReadWriteLock;
 
 /**
- * @Auther: Sen
+ * @Author: Sen
  * @Date: 2019/12/16 13:54
  * @Description:
  */

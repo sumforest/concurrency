@@ -3,7 +3,7 @@ package com.sen.concurrency2.chapter18;
 import sun.security.provider.Sun;
 
 /**
- * @Auther: Sen
+ * @Author: Sen
  * @Date: 2019/12/11 16:20
  * @Description:
  */

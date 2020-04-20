@@ -5,7 +5,7 @@ import java.util.concurrent.Phaser;
 import java.util.concurrent.TimeUnit;
 
 /**
- * @Auther: Sen
+ * @Author: Sen
  * @Date: 2019/12/16 22:13
  * @Description: arrive()立即返回
  */

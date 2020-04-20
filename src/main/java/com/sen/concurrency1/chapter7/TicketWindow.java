@@ -1,9 +1,9 @@
 package com.sen.concurrency1.chapter7;
 
 /**
- * @Auther: Sen
+ * @Author: Sen
  * @Date: 2019/12/6 19:06
- * @Description:
+ * @Description: 继承 {@link Thread} 创建线程
  */
 public class TicketWindow extends Thread {
 
@@ -23,8 +23,9 @@ public class TicketWindow extends Thread {
     public void run() {
         while (true) {
             synchronized (MONITOR){
-                if (index > MAX)
+                if (index > MAX) {
                     break;
+                }
                 try {
                     Thread.sleep(10);
                 } catch (InterruptedException e) {

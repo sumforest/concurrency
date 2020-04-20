@@ -6,7 +6,7 @@ import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 
 /**
- * @Auther: Sen
+ * @Author: Sen
  * @Date: 2019/12/18 02:44
  * @Description: 场景: 1.解决调用{@link ExecutorService#shutdownNow()}获取的未执行任务队列不准确
  * 2.解决任务队列中的返回对象是ExecutorCompletionService$QueueingFuture@52cc8049并不是们定义的Runnable

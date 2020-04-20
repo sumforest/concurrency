@@ -3,7 +3,7 @@ package com.sen.concurrency3.juc.collections.blocking;
 import java.util.concurrent.ArrayBlockingQueue;
 
 /**
- * @Auther: Sen
+ * @Author: Sen
  * @Date: 2019/12/19 15:04
  * @Description:
  */

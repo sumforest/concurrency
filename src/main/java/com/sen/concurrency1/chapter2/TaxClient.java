@@ -1,7 +1,7 @@
 package com.sen.concurrency1.chapter2;
 
 /**
- * @Auther: Sen
+ * @Author: Sen
  * @Date: 2019/12/6 20:03
  * @Description: 计算个人所得税（策略模式）
  */

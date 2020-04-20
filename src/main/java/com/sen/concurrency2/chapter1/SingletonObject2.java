@@ -1,9 +1,9 @@
 package com.sen.concurrency2.chapter1;
 
 /**
- * @Auther: Sen
+ * @Author: Sen
  * @Date: 2019/12/8 22:15
- * @Description:
+ * @Description: 懒汉式，线程安全
  */
 public class SingletonObject2 {
 
@@ -18,8 +18,9 @@ public class SingletonObject2 {
      * @return
      */
     public synchronized static SingletonObject2 getInstance() {
-        if (null == instance)
+        if (null == instance) {
             instance = new SingletonObject2();
+        }
         return instance;
     }
 }

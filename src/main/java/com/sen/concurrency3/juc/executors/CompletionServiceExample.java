@@ -5,7 +5,7 @@ import java.util.List;
 import java.util.concurrent.*;
 
 /**
- * @Auther: Sen
+ * @Author: Sen
  * @Date: 2019/12/17 23:46
  * @Description:
  */

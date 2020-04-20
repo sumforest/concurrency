@@ -1,7 +1,7 @@
 package com.sen.concurrency2.chapter6;
 
 /**
- * @Auther: Sen
+ * @Author: Sen
  * @Date: 2019/12/9 19:58
  * @Description: 读写锁，只有读操作并行，读写交替操作串行，多个写操作串行
  */

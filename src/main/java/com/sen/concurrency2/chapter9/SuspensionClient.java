@@ -1,7 +1,7 @@
 package com.sen.concurrency2.chapter9;
 
 /**
- * @Auther: Sen
+ * @Author: Sen
  * @Date: 2019/12/10 17:15
  * @Description: 多线程设计模式--确保挂起设计模式
  */

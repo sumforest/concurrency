@@ -1,7 +1,7 @@
 package com.sen.concurrency2.chapter5;
 
 /**
- * @Auther: Sen
+ * @Author: Sen
  * @Date: 2019/12/9 18:50
  * @Description: 单线程执行设计模式，有一个门，只能有一个人通过。
  */

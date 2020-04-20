@@ -1,7 +1,7 @@
 package com.sen.concurrency1.chapter1;
 
 /**
- * @Auther: Sen
+ * @Author: Sen
  * @Date: 2019/12/6 17:44
  * @Description: 创建并启动线程jconsole监控
  */

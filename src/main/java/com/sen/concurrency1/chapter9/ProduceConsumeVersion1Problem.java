@@ -3,10 +3,18 @@ package com.sen.concurrency1.chapter9;
 import java.util.stream.Stream;
 
 /**
- * @Auther: Sen
+ * @Author: Sen
  * @Date: 2019/12/7 21:20
- * @Description: 多个生产者消费者造成的程序假死
+ * @Description: 生产者消费者问题if-else version:1.0 问题：多个生产者消费者造成的程序假死；重复生产
  * 因为notify()方法唤醒的线程是随机的
+ * 程序执行结果如下：
+ *
+ * P->1
+ * C->1
+ * P->2
+ *
+ * c1唤醒的恰好就是p2那么p2生产完后就陷入了阻塞而p2生产完后唤醒的是消费者那么所有线程到进入waitSet，导致
+ * 没有线程唤醒他们出现程序假死
  */
 public class ProduceConsumeVersion1Problem {
 
@@ -52,15 +60,17 @@ public class ProduceConsumeVersion1Problem {
         ProduceConsumeVersion1Problem pc = new ProduceConsumeVersion1Problem();
         Stream.of("P1","P2").forEach(n->{
             new Thread(()->{
-                while (true)
+                while (true) {
                     pc.produce();
+                }
             }).start();
         });
 
         Stream.of("C1","C2").forEach(n->{
             new Thread(()->{
-                while (true)
+                while (true) {
                     pc.consume();
+                }
             }).start();
 
         });

@@ -3,7 +3,7 @@ package com.sen.concurrency2.chapter16;
 import java.util.Random;
 
 /**
- * @Auther: Sen
+ * @Author: Sen
  * @Date: 2019/12/10 23:53
  * @Description:
  */

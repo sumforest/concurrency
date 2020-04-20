@@ -3,7 +3,7 @@ package com.sen.concurrency3.juc.collections.concurrent;
 import java.util.concurrent.CopyOnWriteArrayList;
 
 /**
- * @Auther: Sen
+ * @Author: Sen
  * @Date: 2019/12/20 14:31
  * @Description:
  */

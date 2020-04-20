@@ -15,7 +15,7 @@ import static org.hamcrest.CoreMatchers.equalTo;
 import static org.junit.Assert.assertThat;
 
 /**
- * @Auther: Sen
+ * @Author: Sen
  * @Date: 2019/12/19 15:08
  * @Description:
  */

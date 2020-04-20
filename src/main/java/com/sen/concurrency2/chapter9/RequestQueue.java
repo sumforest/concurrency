@@ -3,7 +3,7 @@ package com.sen.concurrency2.chapter9;
 import java.util.LinkedList;
 
 /**
- * @Auther: Sen
+ * @Author: Sen
  * @Date: 2019/12/10 16:57
  * @Description:
  */

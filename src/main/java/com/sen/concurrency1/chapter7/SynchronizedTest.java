@@ -1,12 +1,15 @@
 package com.sen.concurrency1.chapter7;
 
 /**
- * @Auther: Sen
+ * @Author: Sen
  * @Date: 2019/12/7 17:09
  * @Description: 通过jconsole和jstack命令以及javap -c查看synchronized关键字
+ * 通过指令 monitorenter、monitorexit 实现加锁,synchronized再代码块中才在反编译二进制文件中出现该两条指令
  */
 public class SynchronizedTest {
+
     private final static Object MONITOR = new Object();
+
     public static void main(String[] args) {
         Runnable runnable = ()->{
             synchronized (MONITOR) {

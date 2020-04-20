@@ -4,7 +4,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * @Auther: Sen
+ * @Author: Sen
  * @Date: 2019/12/10 18:05
  * @Description: key是当前线程
  */

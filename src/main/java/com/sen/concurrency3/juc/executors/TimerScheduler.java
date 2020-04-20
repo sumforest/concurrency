@@ -5,7 +5,7 @@ import java.util.TimerTask;
 import java.util.concurrent.TimeUnit;
 
 /**
- * @Auther: Sen
+ * @Author: Sen
  * @Date: 2019/12/17 15:29
  * @Description: 定时任务的解决方案
  * 1.Quartz

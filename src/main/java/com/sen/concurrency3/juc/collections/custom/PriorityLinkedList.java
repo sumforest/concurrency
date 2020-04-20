@@ -1,7 +1,7 @@
 package com.sen.concurrency3.juc.collections.custom;
 
 /**
- * @Auther: Sen
+ * @Author: Sen
  * @Date: 2019/12/18 22:11
  * @Description:
  */

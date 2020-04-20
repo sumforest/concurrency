@@ -4,7 +4,7 @@ import java.util.TreeMap;
 import java.util.concurrent.ConcurrentSkipListMap;
 
 /**
- * @Auther: Sen
+ * @Author: Sen
  * @Date: 2019/12/20 02:13
  * @Description:
  */
