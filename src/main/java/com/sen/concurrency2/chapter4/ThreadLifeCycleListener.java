@@ -1,20 +1,23 @@
 package com.sen.concurrency2.chapter4;
 
-import sun.misc.Lock;
-
 import java.util.List;
 
 /**
  * @Author: Sen
  * @Date: 2019/12/9 17:53
- * @Description:
+ * @Description: 线程生命周期监测
  */
 public class ThreadLifeCycleListener implements LifeCycleListener {
 
     private final Object LOCK = new Object();
 
+    /**
+     * 检查线程的生命周期
+     *
+     * @param ids 线程id集合
+     */
     public void checkLifeCycleStatus(List<String> ids) {
-        ids.forEach(id->new Thread(new ObserverRunnable(this){
+        ids.forEach(id -> new Thread(new ObserverRunnable(this) {
             @Override
             public void run() {
                 notifyChange(new RunnableEvent(RunnableStatus.RUNNING, null, Thread.currentThread()));
@@ -28,7 +31,7 @@ public class ThreadLifeCycleListener implements LifeCycleListener {
                 }
 
             }
-        },id).start());
+        }, id).start());
     }
 
     @Override

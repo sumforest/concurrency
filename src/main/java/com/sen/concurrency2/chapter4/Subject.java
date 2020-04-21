@@ -9,25 +9,41 @@ import java.util.List;
  * @Description: 被观察者
  */
 public class Subject {
-    private List<Observer> observers = new ArrayList<>();
+    private final List<Observer> observers = new ArrayList<>();
 
     private int status;
 
     public void setStatus(int status) {
-        if (status == this.status)
+        // 状态相等不改变当前状态
+        if (status == this.status) {
             return;
+        }
         this.status = status;
+        // 更新状态后通知观察者
         notifyObservers();
     }
 
+
+    /**
+     * 添加观察者
+     * @param observer 观察者
+     */
     public void attach(Observer observer) {
         observers.add(observer);
     }
 
+    /**
+     * 唤醒观察者
+     */
     private void notifyObservers() {
+        // 调用观察者的更行方法
         observers.forEach(Observer::update);
     }
 
+    /**
+     * 获取被观察者状态
+     * @return status
+     */
     public int getStatus() {
         return status;
     }

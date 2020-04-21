@@ -3,7 +3,7 @@ package com.sen.concurrency2.chapter4;
 /**
  * @Author: Sen
  * @Date: 2019/12/9 03:10
- * @Description:
+ * @Description: 八进制观察者
  */
 public class OctalObserver extends Observer {
 
