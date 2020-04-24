@@ -3,7 +3,7 @@ package com.sen.concurrency2.chapter5;
 /**
  * @Author: Sen
  * @Date: 2019/12/9 18:48
- * @Description:
+ * @Description: 用户，每一个用户用一个线程来表示
  */
 public class User extends Thread {
 
@@ -22,6 +22,7 @@ public class User extends Thread {
     @Override
     public void run() {
         System.out.println(username + "BEGIN");
+        // 用户通过门
         while (true) {
             gate.pass(username,userAddress);
         }

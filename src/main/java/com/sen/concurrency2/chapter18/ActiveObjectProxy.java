@@ -9,23 +9,23 @@ class ActiveObjectProxy implements ActiveObject {
 
     private final Servant servant;
 
-    private final SchedulerThread schedularThread;
+    private final SchedulerThread schedulerThread;
 
-    public ActiveObjectProxy(Servant servant, SchedulerThread schedularThread) {
+    public ActiveObjectProxy(Servant servant, SchedulerThread schedulerThread) {
         this.servant = servant;
-        this.schedularThread = schedularThread;
+        this.schedulerThread = schedulerThread;
     }
 
 
     @Override
     public Result makeString(int count, char fillchar) {
         FutureResult futureResult = new FutureResult();
-        schedularThread.invoke(new MakeStringRequest(servant,futureResult,count,fillchar));
+        schedulerThread.invoke(new MakeStringRequest(servant,futureResult,count,fillchar));
         return futureResult;
     }
 
     @Override
     public void displayString(String text) {
-        schedularThread.invoke(new DisplayStringRequest(servant, text));
+        schedulerThread.invoke(new DisplayStringRequest(servant, text));
     }
 }

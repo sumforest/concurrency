@@ -1,11 +1,9 @@
 package com.sen.concurrency2.chapter18;
 
-import sun.security.provider.Sun;
-
 /**
  * @Author: Sen
  * @Date: 2019/12/11 16:20
- * @Description:
+ * @Description: 票据结果
  */
 public class FutureResult implements Result {
 

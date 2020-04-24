@@ -3,7 +3,7 @@ package com.sen.concurrency2.chapter18;
 /**
  * @Author: Sen
  * @Date: 2019/12/11 16:25
- * @Description:
+ * @Description: 计划线程
  */
 public class SchedulerThread extends Thread {
 

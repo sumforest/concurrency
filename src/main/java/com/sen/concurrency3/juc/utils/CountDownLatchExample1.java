@@ -45,10 +45,11 @@ public class CountDownLatchExample1 {
         @Override
         public void run() {
             int value = arr[index];
-            if (value % 2 == 0)
+            if (value % 2 == 0) {
                 arr[index] = value * 2;
-            else
+            } else {
                 arr[index] = value + 1;
+            }
             System.out.println(Thread.currentThread().getName() + " arr[" + index + "] =" + arr[index]);
             LATCH.countDown();
         }

@@ -3,7 +3,7 @@ package com.sen.concurrency2.chapter18;
 /**
  * @Author: Sen
  * @Date: 2019/12/11 16:23
- * @Description:
+ * @Description: 真实结果
  */
 public class RealResult implements Result {
 

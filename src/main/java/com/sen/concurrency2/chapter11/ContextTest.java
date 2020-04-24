@@ -5,7 +5,7 @@ import java.util.stream.IntStream;
 /**
  * @Author: Sen
  * @Date: 2019/12/10 18:54
- * @Description:
+ * @Description: 使用 {@link ThreadLocal} 解决多线程模式下构建一个对象的信息从数据库和网络上查询数据速度不一致问题
  */
 public class ContextTest {
 

@@ -5,12 +5,15 @@ import java.util.Random;
 /**
  * @Author: Sen
  * @Date: 2019/12/10 17:03
- * @Description:
+ * @Description: 请求处理--服务端
  */
 public class RequestServer extends Thread {
 
     private final RequestQueue queue;
 
+    /**
+     * 退出标记，true退出，默认false
+     */
     private volatile boolean flag = false;
 
     private final Random random;

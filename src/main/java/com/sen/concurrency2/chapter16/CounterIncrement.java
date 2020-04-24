@@ -5,7 +5,7 @@ import java.util.Random;
 /**
  * @Author: Sen
  * @Date: 2019/12/10 23:53
- * @Description:
+ * @Description: 计算增量
  */
 public class CounterIncrement extends Thread {
 

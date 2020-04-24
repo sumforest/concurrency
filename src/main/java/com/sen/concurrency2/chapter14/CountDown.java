@@ -3,7 +3,7 @@ package com.sen.concurrency2.chapter14;
 /**
  * @Author: Sen
  * @Date: 2019/12/10 22:59
- * @Description:
+ * @Description: 手动实现 {@link java.util.concurrent.CountDownLatch}
  */
 public class CountDown {
 

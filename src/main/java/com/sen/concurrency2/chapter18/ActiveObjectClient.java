@@ -3,7 +3,7 @@ package com.sen.concurrency2.chapter18;
 /**
  * @Author: Sen
  * @Date: 2019/12/11 17:44
- * @Description:
+ * @Description: ActiveObject设计模式
  */
 public class ActiveObjectClient {
 

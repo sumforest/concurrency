@@ -3,7 +3,7 @@ package com.sen.concurrency2.chapter6;
 /**
  * @Author: Sen
  * @Date: 2019/12/9 20:42
- * @Description:
+ * @Description: 手动时实现一个读写锁
  */
 public class Client {
 
@@ -15,7 +15,7 @@ public class Client {
         new ReaderWorker(data).start();
         new ReaderWorker(data).start();
 
-        new WorkerWriter(data, "acbfrthh").start();
-            new WorkerWriter(data, "ACBFRTHH").start();
+        new WriterWorker(data, "acbfrthh").start();
+        new WriterWorker(data, "ACBFRTHH").start();
     }
 }

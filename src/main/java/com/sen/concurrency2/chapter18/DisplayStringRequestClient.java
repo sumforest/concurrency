@@ -3,7 +3,7 @@ package com.sen.concurrency2.chapter18;
 /**
  * @Author: Sen
  * @Date: 2019/12/11 17:35
- * @Description:
+ * @Description: 展示字符串
  */
 public class DisplayStringRequestClient extends Thread {
     private final ActiveObject activeObject;

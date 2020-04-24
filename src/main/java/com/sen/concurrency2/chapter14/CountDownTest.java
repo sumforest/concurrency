@@ -7,7 +7,7 @@ import java.util.stream.IntStream;
 /**
  * @Author: Sen
  * @Date: 2019/12/10 22:52
- * @Description:
+ * @Description: 手动实现 {@link java.util.concurrent.CountDownLatch}
  */
 public class CountDownTest {
 

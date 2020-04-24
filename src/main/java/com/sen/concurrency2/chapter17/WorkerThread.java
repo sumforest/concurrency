@@ -5,7 +5,7 @@ import java.util.Random;
 /**
  * @Author: Sen
  * @Date: 2019/12/11 01:34
- * @Description:
+ * @Description: 取货工人
  */
 public class WorkerThread extends Thread {
 

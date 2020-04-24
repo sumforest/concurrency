@@ -5,7 +5,7 @@ import java.util.Random;
 /**
  * @Author: Sen
  * @Date: 2019/12/10 17:12
- * @Description:
+ * @Description: 请求客户端--提交请求
  */
 public class RequestClient extends Thread{
 
@@ -25,7 +25,7 @@ public class RequestClient extends Thread{
     public void run() {
         for (int i = 0; i < 20; i++) {
             queue.putRequest(request);
-            System.out.println("Client -- " + Thread.currentThread().getName() + "put " + request.getRequestValue());
+            System.out.println("Client -- " + Thread.currentThread().getName() + " put " + request.getRequestValue());
             try {
                 Thread.sleep(random.nextInt(100));
             } catch (InterruptedException e) {

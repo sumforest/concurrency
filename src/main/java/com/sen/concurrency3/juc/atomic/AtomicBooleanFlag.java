@@ -1,7 +1,6 @@
 package com.sen.concurrency3.juc.atomic;
 
 import com.sun.org.apache.xpath.internal.functions.FuncFalse;
-
 import java.util.concurrent.atomic.AtomicBoolean;
 
 /**

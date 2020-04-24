@@ -3,11 +3,11 @@ package com.sen.concurrency3.juc.atomic;
 /**
  * @Author: Sen
  * @Date: 2019/12/14 22:09
- * @Description:
+ * @Description: 使用源字类实现锁
  */
 public class CompareAndSetTryLockTest {
 
-    public final static ComarenAndSetTryLock LOCK = new ComarenAndSetTryLock();
+    public final static CompareAndSetTryLock LOCK = new CompareAndSetTryLock();
 
     public static void main(String[] args) {
         for (int i = 0; i < 5; i++) {

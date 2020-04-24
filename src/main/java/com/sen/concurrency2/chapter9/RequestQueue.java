@@ -5,7 +5,7 @@ import java.util.LinkedList;
 /**
  * @Author: Sen
  * @Date: 2019/12/10 16:57
- * @Description:
+ * @Description: 请求队列
  */
 public class RequestQueue {
 
@@ -15,6 +15,10 @@ public class RequestQueue {
         this.queue = new LinkedList<>();
     }
 
+    /**
+     * 获取请求
+     * @return
+     */
     public Request getRequest() {
         synchronized (queue) {
             while (queue.size() <= 0) {
@@ -28,6 +32,10 @@ public class RequestQueue {
         }
     }
 
+    /**
+     * 添加请求
+     * @param request
+     */
     public void putRequest(Request request) {
         synchronized (queue) {
             queue.addLast(request);

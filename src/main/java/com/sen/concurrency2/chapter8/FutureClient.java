@@ -13,14 +13,18 @@ public class FutureClient {
 
     public static void main(String[] args) throws InterruptedException {
         FutureService futureService = new FutureService();
-        futureService.submit(() -> {
-            try {
-                Thread.sleep(5_000);
-            } catch (InterruptedException e) {
-                e.printStackTrace();
-            }
-            return "FINISHED";
-        },System.out::println);
+        futureService.submit(
+                // 执行逻辑
+                () -> {
+                    try {
+                        Thread.sleep(5_000);
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }
+                    return "FINISHED";
+                }
+                // 消费结果逻辑
+                , System.out::println);
         System.out.println("============");
         System.out.println("do other thing");
         System.out.println("============");

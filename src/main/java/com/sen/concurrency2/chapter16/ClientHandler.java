@@ -39,8 +39,9 @@ public class ClientHandler implements Runnable {
     }
 
     public void stop() {
-        if (!running)
+        if (!running) {
             return;
+        }
         this.running = false;
         try {
             this.client.close();

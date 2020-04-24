@@ -7,7 +7,7 @@ import java.util.concurrent.atomic.AtomicInteger;
  * @Date: 2019/12/14 22:14
  * @Description:
  */
-public class ComarenAndSetTryLock {
+public class CompareAndSetTryLock {
 
     private final static AtomicInteger atomicInteger = new AtomicInteger(0);
 
@@ -15,13 +15,15 @@ public class ComarenAndSetTryLock {
 
     public void tryLock() throws GetLockFailedExeption {
         boolean success = atomicInteger.compareAndSet(0, 1);
-        if (!success)
+        if (!success) {
             throw new GetLockFailedExeption(Thread.currentThread().getName() + " get tryLock failed");
+        }
         currentThread = Thread.currentThread();
     }
 
     public void unlock() {
-        if (currentThread == Thread.currentThread())
+        if (currentThread == Thread.currentThread()) {
             atomicInteger.compareAndSet(1, 0);
+        }
     }
 }

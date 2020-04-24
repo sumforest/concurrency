@@ -41,8 +41,9 @@ public class EncryptClassLoader extends ClassLoader {
         try (FileInputStream fis = new FileInputStream(classpath);
              ByteArrayOutputStream baos = new ByteArrayOutputStream()) {
             int data;
-            while ((data = fis.read()) != -1)
+            while ((data = fis.read()) != -1) {
                 baos.write(data ^ ENCRYPT_SEED);
+            }
             return baos.toByteArray();
         } catch (IOException e) {
             e.printStackTrace();

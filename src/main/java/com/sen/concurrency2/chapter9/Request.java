@@ -3,7 +3,7 @@ package com.sen.concurrency2.chapter9;
 /**
  * @Author: Sen
  * @Date: 2019/12/10 16:56
- * @Description:
+ * @Description: 请求
  */
 public class Request {
 

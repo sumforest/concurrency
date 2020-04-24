@@ -7,5 +7,9 @@ package com.sen.concurrency2.chapter18;
  */
 public interface Result {
 
+    /**
+     * 获取结果
+     * @return
+     */
     Object getResultValue();
 }

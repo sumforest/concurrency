@@ -19,7 +19,8 @@ public class MessageHandler {
     public void request(Message message) {
         executor.execute(()->{
             String value = message.getValue();
-            System.out.println(Thread.currentThread().getName() + " deal with request get message " + value);
+            System.out.println(Thread.currentThread().getName()
+                    + " deal with request get message " + value);
             try {
                 Thread.sleep(random.nextInt(1000));
             } catch (InterruptedException e) {
@@ -29,7 +30,8 @@ public class MessageHandler {
 
        /* new Thread(()->{
             String value = message.getValue();
-            System.out.println(Thread.currentThread().getName() + " deal with request get message " + value);
+            System.out.println(Thread.currentThread().getName()
+            + " deal with request get message " + value);
             try {
                 Thread.sleep(random.nextInt(1000));
             } catch (InterruptedException e) {

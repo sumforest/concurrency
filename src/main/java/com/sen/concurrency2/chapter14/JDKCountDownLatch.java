@@ -7,7 +7,7 @@ import java.util.stream.IntStream;
 /**
  * @Author: Sen
  * @Date: 2019/12/10 22:52
- * @Description:
+ * @Description: {@link CountDownLatch} 多线程计数器
  */
 public class JDKCountDownLatch {
 

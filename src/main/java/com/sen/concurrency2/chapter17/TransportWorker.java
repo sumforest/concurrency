@@ -5,7 +5,7 @@ import java.util.Random;
 /**
  * @Author: Sen
  * @Date: 2019/12/11 02:11
- * @Description:
+ * @Description: 生产工人
  */
 public class TransportWorker extends Thread {
     private final Channel channel;

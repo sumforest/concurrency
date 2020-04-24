@@ -6,7 +6,7 @@ import java.util.Random;
 /**
  * @Author: Sen
  * @Date: 2019/12/9 20:39
- * @Description:
+ * @Description: 读者--读线程
  */
 public class ReaderWorker extends Thread{
 

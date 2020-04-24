@@ -30,8 +30,9 @@ public class SimpleClassLoader extends ClassLoader {
     protected Class<?> findClass(String name) throws ClassNotFoundException {
         String binaryFileName = name.replace(".", "/");
         byte buf[] = loadClassDir(binaryFileName, dir);
-        if (buf == null || buf.length == 0)
+        if (buf == null || buf.length == 0) {
             throw new ClassNotFoundException(classLoaderName + " class not found " + name);
+        }
         return defineClass(name, buf, 0, buf.length);
     }
 
@@ -43,15 +44,17 @@ public class SimpleClassLoader extends ClassLoader {
                 ClassLoader systemClassLoader = ClassLoader.getSystemClassLoader();
                 aClass = systemClassLoader.loadClass(name);
                 if (aClass != null) {
-                    if (resolve)
+                    if (resolve) {
                         resolveClass(aClass);
+                    }
                     return aClass;
                 }
             }
             aClass = findClass(name);
         }
-        if (resolve)
+        if (resolve) {
             resolveClass(aClass);
+        }
         return aClass;
     }
 

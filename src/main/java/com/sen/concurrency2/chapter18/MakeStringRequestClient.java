@@ -3,7 +3,7 @@ package com.sen.concurrency2.chapter18;
 /**
  * @Author: Sen
  * @Date: 2019/12/11 17:38
- * @Description:
+ * @Description: 产生字符串
  */
 public class MakeStringRequestClient extends Thread {
 

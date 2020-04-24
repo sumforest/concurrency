@@ -6,7 +6,7 @@ import java.util.concurrent.atomic.AtomicInteger;
 /**
  * @Author: Sen
  * @Date: 2019/12/10 22:20
- * @Description:
+ * @Description: 生产者
  */
 public class ProduceThread extends Thread {
 
@@ -14,6 +14,9 @@ public class ProduceThread extends Thread {
 
     private final Random random;
 
+    /**
+     * 生产消息总数
+     */
     private final static AtomicInteger count = new AtomicInteger(0);
 
     public ProduceThread(MessageQueue messageQueue) {

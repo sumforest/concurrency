@@ -3,7 +3,7 @@ package com.sen.concurrency2.chapter8;
 /**
  * @Author: Sen
  * @Date: 2019/12/10 00:33
- * @Description: 同步阻塞调用
+ * @Description: Future设计模式--同步阻塞调用
  */
 public class SynchronizedInvoker {
 

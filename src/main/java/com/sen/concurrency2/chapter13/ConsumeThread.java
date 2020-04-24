@@ -5,7 +5,7 @@ import java.util.Random;
 /**
  * @Author: Sen
  * @Date: 2019/12/10 22:29
- * @Description:
+ * @Description: 消费者
  */
 public class ConsumeThread extends Thread {
     private final MessageQueue messageQueue;

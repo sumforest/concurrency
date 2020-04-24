@@ -7,6 +7,9 @@ package com.sen.concurrency2.chapter6;
  */
 public class SharedData {
 
+    /**
+     * 声明读写锁
+     */
     private final ReadWriteLock LOCK = new ReadWriteLock();
 
     private char[] data;
@@ -18,7 +21,7 @@ public class SharedData {
         }
     }
 
-    public void wirteData(char ch) {
+    public void writeData(char ch) {
         try {
             LOCK.writeLock();
             for (int i = 0; i < data.length; i++) {

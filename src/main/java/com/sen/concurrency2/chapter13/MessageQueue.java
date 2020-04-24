@@ -6,7 +6,7 @@ import java.util.concurrent.atomic.AtomicInteger;
 /**
  * @Author: Sen
  * @Date: 2019/12/10 22:11
- * @Description:
+ * @Description: 消息队列
  */
 public class MessageQueue {
 

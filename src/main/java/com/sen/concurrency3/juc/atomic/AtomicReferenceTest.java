@@ -11,10 +11,10 @@ public class AtomicReferenceTest {
 
 
     public static void main(String[] args) {
-        AtomicReference<Simple> reference = new AtomicReference<>(new Simple("12306", "铁道部"));
+        AtomicReference<Simple> reference = new AtomicReference<>(new Simple("铁道部", "12306"));
         Simple simple = reference.get();
         System.out.println(simple.getName());
-        boolean success = reference.compareAndSet(simple, new Simple("铁道部", "铁道部"));
+        boolean success = reference.compareAndSet(simple, new Simple("铁道部1", "1111"));
         System.out.println(success);
         System.out.println(reference.get().getName());
     }

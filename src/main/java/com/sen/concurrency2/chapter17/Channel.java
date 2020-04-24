@@ -1,18 +1,20 @@
 package com.sen.concurrency2.chapter17;
 
-
 import java.util.Arrays;
 import java.util.stream.IntStream;
 
 /**
  * @Author: Sen
  * @Date: 2019/12/11 01:32
- * @Description:
+ * @Description: 传送带
  */
 public class Channel {
 
     private final Request[] requestQueue;
 
+    /**
+     * 取货工人池
+     */
     private final WorkerThread[] workerPool;
 
     private final int MAX_REQUEST_QUEUE_SIZE = 100;
@@ -47,6 +49,7 @@ public class Channel {
             }
         }
         this.requestQueue[tail] = request;
+        // 使tail的范围在 [0,requestQueue.length]
         this.tail = (tail + 1) % requestQueue.length;
         this.count++;
         this.notifyAll();

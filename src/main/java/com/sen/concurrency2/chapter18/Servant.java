@@ -3,7 +3,7 @@ package com.sen.concurrency2.chapter18;
 /**
  * @Author: Sen
  * @Date: 2019/12/11 16:22
- * @Description:
+ * @Description: 仆人--真正干活
  */
 class Servant implements ActiveObject {
 

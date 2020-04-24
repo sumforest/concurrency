@@ -6,6 +6,7 @@ package com.sen.concurrency2.chapter13;
  * @Description:
  */
 public class Message {
+
     private String data;
 
     public Message(String data) {

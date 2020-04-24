@@ -13,7 +13,7 @@ public class AtomicIntegerFieldUpdaterInnerTest {
     private volatile int i;
 
     /**
-     * 当前类中维护多个引用类型时：如链条结构、数；使用AtomicIntegerFieldUpdater保证原子性节省一般空间
+     * 当前类中维护多个引用类型时：如链表结构、树；使用AtomicIntegerFieldUpdater保证原子性节省一半空间
      */
     private AtomicInteger atomicInteger = new AtomicInteger();
 
