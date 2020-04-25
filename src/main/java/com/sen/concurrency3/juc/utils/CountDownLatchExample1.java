@@ -9,7 +9,7 @@ import java.util.concurrent.TimeUnit;
 /**
  * @Author: Sen
  * @Date: 2019/12/15 18:47
- * @Description:
+ * @Description: {@link CountDownLatch} 应用一：等待所有子线程完成任务在执行父线程逻辑
  */
 public class CountDownLatchExample1 {
 
@@ -20,7 +20,7 @@ public class CountDownLatchExample1 {
     private final static CountDownLatch LATCH = new CountDownLatch(10);
 
     public static void main(String[] args) throws InterruptedException {
-        int[] arr = {1, 2, 3, 4, 5, 6, 7, 8,9,10};
+        int[] arr = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
         for (int i = 0; i < arr.length; i++) {
             SERVICE.submit(new Arr(arr, i));
             Thread.sleep(RANDOM.nextInt(500));
@@ -31,7 +31,7 @@ public class CountDownLatchExample1 {
         System.out.println("All tasks finished");
     }
 
-    private static class Arr implements Runnable{
+    private static class Arr implements Runnable {
 
         private final int[] arr;
 

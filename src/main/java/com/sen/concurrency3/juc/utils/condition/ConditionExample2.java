@@ -8,7 +8,8 @@ import java.util.concurrent.locks.ReentrantLock;
 /**
  * @Author: Sen
  * @Date: 2019/12/16 14:26
- * @Description:
+ * @Description: {@link Condition#await()}和{@link Condition#signal()}必须在加锁代码块中使用，
+ * 否则回抛出 {@link IllegalMonitorStateException}
  */
 public class ConditionExample2 {
 
@@ -36,8 +37,9 @@ public class ConditionExample2 {
     private static void buildData() {
         try {
             // lock.lock();
-            while (noUser.get())
+            while (noUser.get()) {
                 condition.await();
+            }
             data++;
             System.out.println("P; " + data);
             noUser.set(true);
@@ -53,8 +55,9 @@ public class ConditionExample2 {
     private static void useData() {
         try {
             // lock.lock();
-            while (!noUser.get())
+            while (!noUser.get()) {
                 condition.await();
+            }
             System.out.println("C: " + data);
             noUser.set(false);
             TimeUnit.SECONDS.sleep(1);

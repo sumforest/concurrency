@@ -6,15 +6,17 @@ import java.util.concurrent.atomic.AtomicLong;
 /**
  * @Author: Sen
  * @Date: 2019/12/18 01:10
- * @Description:
+ * @Description: ScheduledThreadPoolExecutor周期执行任务
  */
 public class ScheduledExecutorServiceExample1 {
 
     public static void main(String[] args) throws ExecutionException, InterruptedException {
         ScheduledExecutorService executorService = new ScheduledThreadPoolExecutor(2);
-        // ScheduledFuture<?> future = executorService.schedule(() -> System.out.println("I am runnable"), 2, TimeUnit.SECONDS);
+        // ScheduledFuture<?> future = executorService
+        //         .schedule(() -> System.out.println("I am runnable"), 2, TimeUnit.SECONDS);
 
-        /* ScheduledFuture<Integer> future = executorService.schedule(() -> 1, 2, TimeUnit.SECONDS);
+         /*ScheduledFuture<Integer> future = executorService
+                 .schedule(() -> 1, 2, TimeUnit.SECONDS);
         System.out.println(future.get());*/
 
         /**

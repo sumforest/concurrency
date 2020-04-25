@@ -10,7 +10,7 @@ import java.util.stream.IntStream;
 /**
  * @Author: Sen
  * @Date: 2019/12/16 22:24
- * @Description: awaitAdvance()阶段与当前Phaser相同阻塞，否则立即返回
+ * @Description: awaitAdvance()阶段与当前 {@link Phaser#getPhase()}相同阻塞，否则立即返回
  */
 public class PhaserExample6 {
 

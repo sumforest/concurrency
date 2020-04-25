@@ -10,7 +10,7 @@ import java.util.concurrent.locks.ReentrantReadWriteLock;
 /**
  * @Author: Sen
  * @Date: 2019/12/16 13:54
- * @Description:
+ * @Description: {@link ReentrantReadWriteLock} JDK读写锁实现
  */
 public class ReentrantReadWriteLockExample {
 

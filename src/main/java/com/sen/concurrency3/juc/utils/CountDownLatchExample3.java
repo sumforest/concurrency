@@ -6,7 +6,7 @@ import java.util.concurrent.TimeUnit;
 /**
  * @Author: Sen
  * @Date: 2019/12/15 19:42
- * @Description:
+ * @Description: {@link CountDownLatch} 应用三：子线程控制父线程
  */
 public class CountDownLatchExample3 {
 

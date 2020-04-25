@@ -34,11 +34,12 @@ public class PhaserExample3 {
         @Override
         public void run() {
             try {
-                Sport(no, phaser, " start running", " end running");
+                sport(no, phaser, " start running", " end running");
 
-                Sport(no, phaser, " start bicycle", " end bicycle");
+                sport(no, phaser, " start bicycle", " end bicycle");
 
                 System.out.println("On shit! I am injured.I will exit");
+                // 减少一个等待值
                 phaser.arriveAndDeregister();
             } catch (InterruptedException e) {
                 e.printStackTrace();
@@ -59,17 +60,18 @@ public class PhaserExample3 {
         @Override
         public void run() {
             try {
-                Sport(no, phaser, " start running", " end running");
+                sport(no, phaser, " start running", " end running");
 
-                Sport(no, phaser, " start bicycle", " end bicycle");
+                sport(no, phaser, " start bicycle", " end bicycle");
 
-                Sport(no, phaser, " start swim", " end swim");
+                sport(no, phaser, " start swim", " end swim");
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
         }
      }
-    private static void Sport(int no, Phaser phaser, String s, String s2) throws InterruptedException {
+
+    private static void sport(int no, Phaser phaser, String s, String s2) throws InterruptedException {
         System.out.println(no + Thread.currentThread().getName() + s);
         TimeUnit.SECONDS.sleep(RANDOM.nextInt(5));
         System.out.println(no + Thread.currentThread().getName() + s2);

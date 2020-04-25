@@ -7,7 +7,7 @@ import java.util.concurrent.locks.ReentrantLock;
 /**
  * @Author: Sen
  * @Date: 2019/12/16 02:50
- * @Description:
+ * @Description: {@link ReentrantLock} 可重入锁
  */
 public class ReentrantLockExample {
 
@@ -19,11 +19,20 @@ public class ReentrantLockExample {
         Thread t2 = new Thread(ReentrantLockExample::lockTest);
         t2.start();*/
 
-        Thread t1 = new Thread(ReentrantLockExample::tryLockTest);
+        new Thread(ReentrantLockExample::lockInterruptiblyTest).start();
+        // 调用lockInterruptibly()获取锁失败而陷入阻塞的线程可以被interrupt()方法打断
+        Thread t1 = new Thread(ReentrantLockExample::lockInterruptiblyTest);
+        t1.start();
+        TimeUnit.SECONDS.sleep(2);
+        System.out.println("--------------interrupt--------------");
+        t1.interrupt();
+
+
+        /*Thread t1 = new Thread(ReentrantLockExample::tryLockTest);
         t1.start();
         TimeUnit.SECONDS.sleep(1);
         Thread t2 = new Thread(ReentrantLockExample::tryLockTest);
-        t2.start();
+        t2.start();*/
 
     }
 

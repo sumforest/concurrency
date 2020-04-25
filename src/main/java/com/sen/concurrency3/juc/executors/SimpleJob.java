@@ -7,7 +7,7 @@ import org.quartz.JobExecutionException;
 /**
  * @Author: Sen
  * @Date: 2019/12/17 16:22
- * @Description:
+ * @Description: Quartz要执行的逻辑
  */
 public class SimpleJob implements Job {
     @Override

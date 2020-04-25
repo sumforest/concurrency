@@ -6,7 +6,8 @@ import java.util.concurrent.TimeUnit;
 /**
  * @Author: Sen
  * @Date: 2019/12/16 01:42
- * @Description:
+ * @Description: {@link Semaphore} 代表临界资源，调用 {@code acquire(2)} 表示获取两份临界资源，当临界资源
+ * 不足时，请求临界资源的线程将会被阻塞而进入阻塞队列
  */
 public class SemaphoreExample2 {
 
@@ -29,6 +30,7 @@ public class SemaphoreExample2 {
         }
         while (true) {
             System.out.println("AP->" + semaphore.availablePermits());
+            // 返回系统评估的因请求资源而被阻塞的线程数
             System.out.println("QL->" + semaphore.getQueueLength());
             TimeUnit.SECONDS.sleep(3);
         }

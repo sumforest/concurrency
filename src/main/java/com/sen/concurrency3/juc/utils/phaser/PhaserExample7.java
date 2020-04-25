@@ -8,7 +8,8 @@ import java.util.concurrent.TimeoutException;
 /**
  * @Author: Sen
  * @Date: 2019/12/16 22:48
- * @Description: 打断
+ * @Description: 打断, {@link Phaser#arriveAndAwaitAdvance()}不能被{@link Thread#interrupt()}打断
+ *
  */
 public class PhaserExample7 {
 

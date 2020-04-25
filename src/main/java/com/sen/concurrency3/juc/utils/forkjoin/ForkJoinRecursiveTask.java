@@ -9,7 +9,7 @@ import java.util.stream.IntStream;
 /**
  * @Author: Sen
  * @Date: 2019/12/16 17:02
- * @Description:
+ * @Description: {@link RecursiveTask} 可以有返回值，forkJoin是一种分治思想
  */
 public class ForkJoinRecursiveTask {
 
@@ -17,6 +17,7 @@ public class ForkJoinRecursiveTask {
     private static final int MAX_DEFAULT = 3;
 
     public static void main(String[] args) throws ExecutionException, InterruptedException {
+        // 创建ForkJoin连接池
         ForkJoinPool forkJoinPool = new ForkJoinPool();
         ForkJoinTask<Integer> result = forkJoinPool.submit(new CalculateRecursiveTask(1, 1000));
         System.out.println(result.get());

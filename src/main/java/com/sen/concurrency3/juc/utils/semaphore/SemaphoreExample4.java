@@ -6,7 +6,9 @@ import java.util.concurrent.TimeUnit;
 /**
  * @Author: Sen
  * @Date: 2019/12/16 02:11
- * @Description:
+ * @Description: 使用 {@linkplain Semaphore#drainPermits()} 排干所有共享资源，
+ * 使用 {@linkplain Semaphore#tryAcquire(long, TimeUnit)} 超过等待时间后立即
+ * 返回，获取共享资源失败。
  */
 public class SemaphoreExample4 {
 
@@ -31,6 +33,7 @@ public class SemaphoreExample4 {
         Thread t2 = new Thread(()->{
             System.out.println(Thread.currentThread().getName() + " in");
             try {
+                // 获取临界资源失败
                 semaphore.tryAcquire(2,TimeUnit.SECONDS);
                 TimeUnit.SECONDS.sleep(2);
             } catch (InterruptedException e) {
@@ -40,9 +43,8 @@ public class SemaphoreExample4 {
                 System.out.println(Thread.currentThread().getName() + " out");
             }
         });
+
         TimeUnit.SECONDS.sleep(1);
         t2.start();
-
-
     }
 }

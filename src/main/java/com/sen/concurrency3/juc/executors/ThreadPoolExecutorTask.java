@@ -10,9 +10,11 @@ import java.util.stream.IntStream;
  * @Description: 停止线程池
  */
 public class ThreadPoolExecutorTask {
+
     public static void main(String[] args) throws InterruptedException {
-        ExecutorService executor = new ThreadPoolExecutor(10, 20, 30,
-                TimeUnit.SECONDS, new ArrayBlockingQueue<>(10), Thread::new, new ThreadPoolExecutor.AbortPolicy());
+        ExecutorService executor = new ThreadPoolExecutor(10, 20
+                ,30, TimeUnit.SECONDS, new ArrayBlockingQueue<>(10)
+                , Thread::new, new ThreadPoolExecutor.AbortPolicy());
 
         IntStream.rangeClosed(1, 20).boxed().forEach(i-> executor.execute(()-> {
             try {

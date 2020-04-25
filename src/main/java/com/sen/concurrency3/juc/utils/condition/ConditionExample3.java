@@ -38,10 +38,11 @@ public class ConditionExample3 {
     }
 
     private static void produce(){
+        LOCK.lock();
         try {
-            LOCK.lock();
-            while ((TIMESTAMPS.size() > MAX_QUEUE_SIZE))
+            while ((TIMESTAMPS.size() > MAX_QUEUE_SIZE)) {
                 PRODUCE_CONDITION.await();
+            }
             long value = System.currentTimeMillis();
             System.out.println(Thread.currentThread().getName() + " P->" + value);
             TIMESTAMPS.addLast(value);
@@ -55,10 +56,11 @@ public class ConditionExample3 {
     }
 
     private static void consume() {
+        LOCK.lock();
         try {
-            LOCK.lock();
-            while (TIMESTAMPS.isEmpty())
+            while (TIMESTAMPS.isEmpty()) {
                 CONSUMER_CONDITION.await();
+            }
             System.out.println(Thread.currentThread().getName() + " C->" + TIMESTAMPS.removeFirst());
             TimeUnit.SECONDS.sleep(2);
             PRODUCE_CONDITION.signalAll();

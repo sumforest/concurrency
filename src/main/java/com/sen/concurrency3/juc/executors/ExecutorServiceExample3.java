@@ -6,7 +6,7 @@ import java.util.stream.IntStream;
 /**
  * @Author: Sen
  * @Date: 2019/12/17 18:28
- * @Description:
+ * @Description: {@link Executors}相关API
  */
 public class ExecutorServiceExample3 {
 
@@ -20,13 +20,14 @@ public class ExecutorServiceExample3 {
     }
 
     /**
-     * 线程池创建时的初始大小时0，随着没每提交一个任务而增一次，直到最大值。
+     * 线程池创建时的初始大小时0，随着每提交一个任务而增一次，直到最大值。
+     *
      * @throws InterruptedException
      */
     private static void test() throws InterruptedException {
         ThreadPoolExecutor executor = (ThreadPoolExecutor) Executors.newFixedThreadPool(5);
         System.out.println(executor.getActiveCount());
-        IntStream.rangeClosed(1, 5).boxed().forEach(i ->{
+        IntStream.rangeClosed(1, 5).boxed().forEach(i -> {
             System.out.println(executor.getActiveCount());
             executor.execute(() -> {
                 try {
@@ -42,6 +43,7 @@ public class ExecutorServiceExample3 {
 
     /**
      * {@link ThreadPoolExecutor#allowCoreThreadTimeOut(boolean)}方法可以把核心线程在超时后回收
+     *
      * @throws InterruptedException
      */
     private static void testAllowCoreThreadTimeOut() throws InterruptedException {
@@ -49,7 +51,7 @@ public class ExecutorServiceExample3 {
         executor.setKeepAliveTime(10, TimeUnit.SECONDS);
         executor.allowCoreThreadTimeOut(true);
         System.out.println(executor.getActiveCount());
-        IntStream.rangeClosed(1, 5).boxed().forEach(i ->{
+        IntStream.rangeClosed(1, 5).boxed().forEach(i -> {
             System.out.println(executor.getActiveCount());
             executor.execute(() -> {
                 try {
@@ -63,9 +65,13 @@ public class ExecutorServiceExample3 {
         System.out.println("Finally:" + executor.getActiveCount());
     }
 
+    /**
+     * 删除已提交但还未执行的任务
+     * @throws InterruptedException
+     */
     private static void testRemove() throws InterruptedException {
         ThreadPoolExecutor executor = (ThreadPoolExecutor) Executors.newFixedThreadPool(2);
-                IntStream.rangeClosed(1, 2).boxed().forEach(i->executor.execute(()-> {
+        IntStream.rangeClosed(1, 2).boxed().forEach(i -> executor.execute(() -> {
             try {
                 System.out.println(Thread.currentThread().getName() + " working");
                 TimeUnit.SECONDS.sleep(10);
@@ -80,6 +86,9 @@ public class ExecutorServiceExample3 {
         executor.remove(runnable);
     }
 
+    /**
+     * prestartCoreThread() 是否启动新创及爱你的线程，还没启动返回true；已启动返回false
+     */
     private static void testPrestartCoreThread() {
         ThreadPoolExecutor executor = (ThreadPoolExecutor) Executors.newFixedThreadPool(2);
         System.out.println(executor.getActiveCount());
@@ -95,6 +104,9 @@ public class ExecutorServiceExample3 {
         System.out.println(executor.prestartCoreThread());
     }
 
+    /**
+     * prestartAllCoreThreads(),返回启动的线程数
+     */
     private static void testPrestartAllCoreThreads() {
         ThreadPoolExecutor executor = (ThreadPoolExecutor) Executors.newFixedThreadPool(2);
         System.out.println(executor.getActiveCount());
@@ -112,13 +124,14 @@ public class ExecutorServiceExample3 {
 
     private static void testThreadPoolAdvice() {
         ThreadPoolExecutor executor = new MyThreadPoolExecutor(1, 2,
-                30, TimeUnit.SECONDS, new ArrayBlockingQueue<>(1), Thread::new, new ThreadPoolExecutor.AbortPolicy());
-       executor.execute(new MyRunnable(1){
-           @Override
-           public void run() {
-               System.out.println(1 / 0);
-           }
-       });
+                30, TimeUnit.SECONDS, new ArrayBlockingQueue<>(1)
+                , Thread::new, new ThreadPoolExecutor.AbortPolicy());
+        executor.execute(new MyRunnable(1) {
+            @Override
+            public void run() {
+                System.out.println(1 / 0);
+            }
+        });
     }
 
     private abstract static class MyRunnable implements Runnable {
@@ -133,22 +146,28 @@ public class ExecutorServiceExample3 {
         }
     }
 
-    private static class MyThreadPoolExecutor extends ThreadPoolExecutor{
+    /**
+     * 线程池AOP编程
+     */
+    private static class MyThreadPoolExecutor extends ThreadPoolExecutor {
 
-        public MyThreadPoolExecutor(int corePoolSize, int maximumPoolSize, long keepAliveTime, TimeUnit unit, BlockingQueue<Runnable> workQueue, ThreadFactory threadFactory, RejectedExecutionHandler handler) {
-            super(corePoolSize, maximumPoolSize, keepAliveTime, unit, workQueue, threadFactory, handler);
+        public MyThreadPoolExecutor(int corePoolSize, int maximumPoolSize, long keepAliveTime
+                , TimeUnit unit, BlockingQueue<Runnable> workQueue, ThreadFactory threadFactory
+                , RejectedExecutionHandler handler) {
+            super(corePoolSize, maximumPoolSize, keepAliveTime, unit, workQueue, threadFactory
+                    , handler);
         }
 
         @Override
         protected void beforeExecute(Thread t, Runnable r) {
-            System.out.println( "MyRunnable NO. " + ((MyRunnable)r).getNo());
+            System.out.println("MyRunnable NO. " + ((MyRunnable) r).getNo());
         }
 
         @Override
         protected void afterExecute(Runnable r, Throwable t) {
             if (t == null) {
                 System.out.println("FINISHED");
-            }else {
+            } else {
                 t.printStackTrace();
             }
         }

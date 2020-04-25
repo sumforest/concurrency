@@ -9,7 +9,8 @@ import java.util.stream.IntStream;
 /**
  * @Author: Sen
  * @Date: 2019/12/17 01:59
- * @Description:
+ * @Description: 线程池的使用1 {@code CacheThreadPool}、{@code FixedThreadPool}
+ * {@code SingleThreadPool}
  */
 public class ExecutorsExample1 {
 
@@ -20,8 +21,8 @@ public class ExecutorsExample1 {
     }
 
     /**
-     *  1.SingleThreadExecutor是由FinalizableDelegatedExecutorService包装实现的与ThreadPoolExecutor没由关系
-     *    所以不具备监控的api
+     *  1.SingleThreadExecutor是由FinalizableDelegatedExecutorService包装实现的与ThreadPoolExecutor
+     *  没有关系所以不具备监控的api
      *  2.SingleThreadExecutor线程池和单独启动一个线程的区别：
      *     2.1 单独启动的线程在执行完run方法的代码之后会被销毁，而单个线程的线程池会一直存活
      *     2.2 单个线程的线程池里面由队列维护它所需要执行的一系列任务，而单独启动的线程没有。

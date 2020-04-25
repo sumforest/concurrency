@@ -5,7 +5,7 @@ import java.util.concurrent.CountDownLatch;
 /**
  * @Author: Sen
  * @Date: 2019/12/15 19:35
- * @Description:
+ * @Description: {@link CountDownLatch} 应用二：一个线程完成后唤醒多个线程工作
  */
 public class CountDownLatchExample2 {
 
@@ -43,6 +43,7 @@ public class CountDownLatchExample2 {
             }
         }).start();
 
+        // main线程等待父线程结束，而main线程的父线程是JVM线程是不会退出的main线程回一直阻塞
         Thread.currentThread().join();
     }
 }

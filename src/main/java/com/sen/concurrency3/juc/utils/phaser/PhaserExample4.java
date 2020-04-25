@@ -6,7 +6,7 @@ import java.util.concurrent.TimeUnit;
 /**
  * @Author: Sen
  * @Date: 2019/12/16 19:23
- * @Description:
+ * @Description: {@link Phaser} 一些相关属性
  */
 public class PhaserExample4 {
 
@@ -23,18 +23,18 @@ public class PhaserExample4 {
         phaser.arriveAndAwaitAdvance();
         System.out.println(phaser.getPhase());*/
 
-      /*  System.out.println(phaser.getRegisteredParties());
+        /*System.out.println(phaser.getRegisteredParties());
         phaser.register();
         System.out.println(phaser.getRegisteredParties());
         phaser.register();
         System.out.println(phaser.getRegisteredParties());
         phaser.register();
-        System.out.println(phaser.getRegisteredParties());*/
+        System.out.println(phaser.getRegisteredParties());
 
-        /*System.out.println(phaser.getArrivedParties());
+        System.out.println(phaser.getArrivedParties());
         System.out.println(phaser.getUnarrivedParties());*/
 
-       /* System.out.println(phaser.getArrivedParties());
+        /*System.out.println(phaser.getArrivedParties());
         System.out.println(phaser.getUnarrivedParties());
         phaser.bulkRegister(10);
         System.out.println(phaser.getRegisteredParties());
@@ -76,7 +76,7 @@ public class PhaserExample4 {
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
-            if (name.equals("Alex")) {
+            if ("Alex".equals(name)) {
                 System.out.println(name + " I am start at the phaser " + phaser.getPhase());
                 phaser.arriveAndAwaitAdvance();
                 System.out.println(name + " I am end at the phaser " + phaser.getPhase());

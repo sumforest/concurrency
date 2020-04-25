@@ -6,7 +6,7 @@ import java.util.concurrent.TimeUnit;
 /**
  * @Author: Sen
  * @Date: 2019/12/16 01:18
- * @Description:
+ * @Description: 信号量 {@link Semaphore} 实现锁
  */
 public class SemaphoreExample1 {
 

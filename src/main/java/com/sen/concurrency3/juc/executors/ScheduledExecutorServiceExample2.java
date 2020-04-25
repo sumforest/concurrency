@@ -12,7 +12,8 @@ public class ScheduledExecutorServiceExample2 {
 
     public static void main(String[] args) throws ExecutionException, InterruptedException {
         // testGetContinueExistingPeriodicTasksAfterShutdownPolicy();
-        testGetExecuteExistingDelayedTasksAfterShutdownPolicy();
+        // testGetExecuteExistingDelayedTasksAfterShutdownPolicy();
+        testScheduleWithFixedDelay();
     }
 
     private static void testScheduleWithFixedDelay() {
@@ -36,23 +37,36 @@ public class ScheduledExecutorServiceExample2 {
     }
 
 
+    /**
+     * 调用shutdown()后继续周期执行周期任务
+     * @throws ExecutionException
+     * @throws InterruptedException
+     */
     private static void testGetContinueExistingPeriodicTasksAfterShutdownPolicy() throws ExecutionException, InterruptedException {
         ScheduledThreadPoolExecutor executorService = new ScheduledThreadPoolExecutor(2);
         System.out.println(executorService.getContinueExistingPeriodicTasksAfterShutdownPolicy());
         executorService.setContinueExistingPeriodicTasksAfterShutdownPolicy(true);
-        ScheduledFuture<?> future = executorService.scheduleAtFixedRate(() -> {
-            System.out.println("Hello World");
-        }, 1,2, TimeUnit.SECONDS);
+
+        ScheduledFuture<?> future = executorService
+                .scheduleAtFixedRate(() -> {
+                    System.out.println("Hello World");
+                }, 1, 2, TimeUnit.SECONDS);
+
         TimeUnit.MILLISECONDS.sleep(1_200);
         executorService.shutdown();
         System.out.println(executorService.getContinueExistingPeriodicTasksAfterShutdownPolicy());
         System.out.println("=========over=========");
     }
 
-    private static void testGetExecuteExistingDelayedTasksAfterShutdownPolicy(){
+    /**
+     * cheduledThreadPoolExecutor默认在调用shutDown()后继续执行延时任务，调用
+     * setExecuteExistingDelayedTasksAfterShutdownPolicy(false)，设置关闭后不执行延时任务。
+     */
+    private static void testGetExecuteExistingDelayedTasksAfterShutdownPolicy() {
         ScheduledThreadPoolExecutor executorService = new ScheduledThreadPoolExecutor(2);
         System.out.println(executorService.getExecuteExistingDelayedTasksAfterShutdownPolicy());
         executorService.setExecuteExistingDelayedTasksAfterShutdownPolicy(false);
+
         executorService.scheduleWithFixedDelay(() -> {
             final AtomicLong stamp = new AtomicLong(0L);
             long currentTime = System.currentTimeMillis();
@@ -69,6 +83,7 @@ public class ScheduledExecutorServiceExample2 {
                 e.printStackTrace();
             }
         }, 1, 2, TimeUnit.SECONDS);
+
         executorService.shutdown();
         System.out.println(executorService.getExecuteExistingDelayedTasksAfterShutdownPolicy());
         System.out.println("++++++++++**over**+++++++++++");

@@ -7,7 +7,7 @@ import java.util.concurrent.*;
 /**
  * @Author: Sen
  * @Date: 2019/12/17 23:46
- * @Description:
+ * @Description: {@link Future} 缺点
  */
 public class CompletionServiceExample {
 
@@ -33,21 +33,24 @@ public class CompletionServiceExample {
 
     /**
      * Future缺点2：先完成的任务无法做到先返回，导致性能丢失；
+     *
      * @throws InterruptedException
      */
     private static void futureDefect2() throws InterruptedException {
         ThreadPoolExecutor executor = (ThreadPoolExecutor) Executors.newCachedThreadPool();
-        List<Callable<Integer>> callables = Arrays.asList(() -> {
-            sleepSeconds(10);
-            System.out.println("callable:--->10");
-            return 10;
-        }, () -> {
-            sleepSeconds(20);
-            System.out.println("callable:--->20");
-            return 20;
-        });
+        List<Callable<Integer>> callables = Arrays.asList(
+                () -> {
+                    sleepSeconds(10);
+                    System.out.println("callable:--->10");
+                    return 10;
+                },
+                () -> {
+                    sleepSeconds(20);
+                    System.out.println("callable:--->20");
+                    return 20;
+                });
         List<Future<Integer>> futures = executor.invokeAll(callables);
-        futures.forEach(f-> {
+        futures.forEach(f -> {
             try {
                 System.out.println(f.get());
             } catch (InterruptedException | ExecutionException e) {

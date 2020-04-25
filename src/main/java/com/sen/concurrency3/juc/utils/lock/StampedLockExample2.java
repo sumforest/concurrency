@@ -12,7 +12,7 @@ import java.util.stream.Collectors;
 /**
  * @Author: Sen
  * @Date: 2019/12/16 16:02
- * @Description:
+ * @Description: {@linkplain StampedLock#tryOptimisticRead()} 乐观的获取锁，只有获取成功才正式的加锁。
  */
 public class StampedLockExample2 {
 

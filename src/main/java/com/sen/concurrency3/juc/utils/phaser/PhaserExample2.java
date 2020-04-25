@@ -8,7 +8,8 @@ import java.util.concurrent.TimeUnit;
 /**
  * @Author: Sen
  * @Date: 2019/12/16 18:43
- * @Description: 计数器可重复使用
+ * @Description: 计数器可重复使用，{@link Phaser#arriveAndAwaitAdvance()}来模拟铁人三项比赛，当所有的运动员
+ * 都完成了一个项目后才开始另外一个项目；经行另一个项目后计数器的值被重置了
  */
 public class PhaserExample2 {
 

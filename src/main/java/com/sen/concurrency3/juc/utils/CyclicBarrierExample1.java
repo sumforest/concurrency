@@ -7,7 +7,7 @@ import java.util.concurrent.TimeUnit;
 /**
  * @Author: Sen
  * @Date: 2019/12/15 22:18
- * @Description:
+ * @Description: {@link CyclicBarrier} 调用 {@code await()}达到设定的此时，将继续执行
  */
 public class CyclicBarrierExample1 {
 
@@ -39,7 +39,7 @@ public class CyclicBarrierExample1 {
                 e.printStackTrace();
             }
         }).start();
-       /* while (true) {
+        /*while (true) {
             System.out.println("Waiting number: " + cyclicBarrier.getNumberWaiting());
             System.out.println("CyclicBarrier Parties: " + cyclicBarrier.getParties());
             System.out.println(cyclicBarrier.isBroken());

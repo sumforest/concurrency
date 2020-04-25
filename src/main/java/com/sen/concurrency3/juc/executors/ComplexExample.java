@@ -13,24 +13,40 @@ import java.util.stream.IntStream;
  */
 public class ComplexExample {
 
-    public static void main(String[] args) throws InterruptedException {
+    public static void main(String[] args) throws InterruptedException, ExecutionException {
         ExecutorService executorService = Executors.newFixedThreadPool(2);
         CompletionService<String> completionService = new ExecutorCompletionService<>(executorService);
-        List<MyTask> tasks = IntStream.rangeClosed(1, 5).boxed().map(MyTask::new).collect(Collectors.toList());
+        // 调用shutdownNow()立即停止线程池时，获取还没有完成的任务
+        List<MyTask> tasks = IntStream
+                .rangeClosed(1, 5)
+                .boxed().map(MyTask::new)
+                .collect(Collectors.toList());
+
         tasks.forEach(completionService::submit);
         TimeUnit.MILLISECONDS.sleep(3000);
         executorService.shutdownNow();
-        List<MyTask> failedTasks = tasks.stream().filter(task -> !task.success).collect(Collectors.toList());
+
+        List<MyTask> failedTasks = tasks
+                .stream()
+                .filter(task -> !task.success)
+                .collect(Collectors.toList());
+
         System.out.println(failedTasks.size());
         System.out.println(failedTasks);
-        // List<Runnable> runnables = IntStream.rangeClosed(1, 5).boxed().map(ComplexExample::task).collect(Collectors.toList());
-        // runnables.forEach(r -> completionService.submit(Executors.callable(r)));
 
-        /*TimeUnit.MILLISECONDS.sleep(500);
+        // 出错演示
+        /*List<Runnable> runnables = IntStream.rangeClosed(1, 5)
+                .boxed()
+                .map(ComplexExample::task)
+                .collect(Collectors.toList());
+
+        runnables.forEach(r -> completionService.submit(r,"Done"));
+
+        TimeUnit.MILLISECONDS.sleep(500);
         List<Runnable> runnableList = executorService.shutdownNow();
         System.out.println(runnableList.size());
-        System.out.println(runnableList);*/
-        /*Future<?> future;
+        System.out.println(runnableList);
+        Future<?> future;
         while ((future = completionService.take()) != null) {
             System.out.println(future.get());
         }*/
@@ -49,7 +65,7 @@ public class ComplexExample {
             System.out.printf("The task [%d] Start\n", no);
             TimeUnit.SECONDS.sleep(ThreadLocalRandom.current().nextInt(10));
             System.out.printf("The task [%d] Done\n", no);
-            System.out.printf("The task [%d] Error\n", no);
+            // System.out.printf("The task [%d] Error\n", no);
             this.success = true;
             return "Success";
         }
@@ -63,6 +79,7 @@ public class ComplexExample {
         return () -> {
             System.out.printf("The task [%d] Start\n", i);
             try {
+                // 线程独有的随机数
                 TimeUnit.SECONDS.sleep(ThreadLocalRandom.current().nextInt(10));
                 System.out.printf("The task [%d] Done\n", i);
             } catch (InterruptedException e) {

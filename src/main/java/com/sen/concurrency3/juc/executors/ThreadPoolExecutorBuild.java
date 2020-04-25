@@ -5,7 +5,7 @@ import java.util.concurrent.*;
 /**
  * @Author: Sen
  * @Date: 2019/12/16 23:51
- * @Description:
+ * @Description: 线程池构造方法
  */
 public class ThreadPoolExecutorBuild {
 

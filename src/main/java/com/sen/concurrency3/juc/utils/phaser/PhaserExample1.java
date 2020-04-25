@@ -8,7 +8,7 @@ import java.util.stream.IntStream;
 /**
  * @Author: Sen
  * @Date: 2019/12/16 18:28
- * @Description: parties动态增加
+ * @Description: 动态增加参与者parties
  */
 public class PhaserExample1 {
 
@@ -18,6 +18,7 @@ public class PhaserExample1 {
         final Phaser phaser = new Phaser();
         IntStream.rangeClosed(1, 5).boxed().map(i -> phaser).forEach(PhaserTask::new);
         phaser.register();
+        // 所有参与者都到达后经行下一个阶段
         phaser.arriveAndAwaitAdvance();
         System.out.println("All worker is finished");
     }
@@ -28,7 +29,9 @@ public class PhaserExample1 {
 
         private PhaserTask(Phaser phaser) {
             this.phaser = phaser;
+            // 注册
             phaser.register();
+            // 启动
             start();
         }
 

@@ -8,7 +8,7 @@ import java.util.concurrent.TimeUnit;
 /**
  * @Author: Sen
  * @Date: 2019/12/17 21:32
- * @Description:
+ * @Description: 直接网等待队列里面添加任务不会导致线程池动态扩容
  */
 public class ExecutorServiceExample5 {
 

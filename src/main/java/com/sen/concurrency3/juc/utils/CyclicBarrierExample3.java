@@ -6,7 +6,8 @@ import java.util.concurrent.TimeUnit;
 /**
  * @Author: Sen
  * @Date: 2019/12/15 23:03
- * @Description:
+ * @Description: 使用 {@link CountDownLatch} 实现 {@link java.util.concurrent.CyclicBarrier} 的
+ * {@code await()} 方法。
  */
 public class CyclicBarrierExample3 {
 
@@ -42,8 +43,9 @@ public class CyclicBarrierExample3 {
         @Override
         public void countDown() {
             super.countDown();
-            if (getCount() == 0)
+            if (super.getCount() == 0) {
                 runnable.run();
+            }
         }
     }
 }

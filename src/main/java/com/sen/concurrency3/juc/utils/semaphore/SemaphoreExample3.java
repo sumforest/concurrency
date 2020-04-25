@@ -6,7 +6,8 @@ import java.util.concurrent.TimeUnit;
 /**
  * @Author: Sen
  * @Date: 2019/12/16 01:49
- * @Description:
+ * @Description: 调用 {@code acquireUninterruptibly()} 方法获取临界资源而陷入阻塞的线程不能被
+ * {@code interrupt()} 打断
  */
 public class SemaphoreExample3 {
 

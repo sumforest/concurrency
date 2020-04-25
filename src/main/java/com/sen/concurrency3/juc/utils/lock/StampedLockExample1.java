@@ -13,7 +13,9 @@ import java.util.stream.Stream;
 /**
  * @Author: Sen
  * @Date: 2019/12/16 16:02
- * @Description:
+ * @Description: {@link StampedLock} JDK 1.8新加入的锁是
+ * {@link java.util.concurrent.locks.ReentrantLock} 的加强版，解决大多数情况是读的情况远远大于写的操作，
+ * 因此可能导致写的饥饿问题。以下使用 {@link StampedLock#readLock()}、{@linkplain StampedLock#writeLock()}
  */
 public class StampedLockExample1 {
 
@@ -24,12 +26,14 @@ public class StampedLockExample1 {
     public static void main(String[] args) {
         ExecutorService service = Executors.newFixedThreadPool(10);
         Runnable readTask = () -> {
-            for (; ; )
+            for (; ; ) {
                 read();
+            }
         };
         Runnable writeTask = () -> {
-            for (; ; )
+            for (; ; ) {
                 write();
+            }
         };
         service.submit(readTask);
         service.submit(readTask);

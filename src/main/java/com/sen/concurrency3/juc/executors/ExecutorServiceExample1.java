@@ -7,7 +7,7 @@ import java.util.stream.IntStream;
 /**
  * @Author: Sen
  * @Date: 2019/12/17 16:51
- * @Description:
+ * @Description: 线程池异常处理
  */
 public class ExecutorServiceExample1 {
 
@@ -19,7 +19,8 @@ public class ExecutorServiceExample1 {
     }
 
     private static void RunnableError() throws InterruptedException {
-        ThreadPoolExecutor executor = (ThreadPoolExecutor) Executors.newFixedThreadPool(10,new MyThreadFactory());
+        ThreadPoolExecutor executor = (ThreadPoolExecutor) Executors.newFixedThreadPool(10
+                ,new MyThreadFactory());
         IntStream.rangeClosed(1, 10).boxed().forEach(i ->
             executor.execute(()-> System.out.println(1/0))
          );
@@ -29,7 +30,8 @@ public class ExecutorServiceExample1 {
     }
 
     private static void RunnableError2() throws InterruptedException {
-        ThreadPoolExecutor executor = (ThreadPoolExecutor) Executors.newFixedThreadPool(10,new MyThreadFactory());
+        ThreadPoolExecutor executor = (ThreadPoolExecutor) Executors.newFixedThreadPool(10
+                ,new MyThreadFactory());
         IntStream.rangeClosed(1, 10).boxed().forEach(i -> executor.execute(new RunnableTask()));
         executor.shutdown();
         executor.awaitTermination(10, TimeUnit.MINUTES);
@@ -81,6 +83,9 @@ public class ExecutorServiceExample1 {
         protected abstract void doError();
     }
 
+    /**
+     * 线程工程，用于线程池创建线程
+     */
     private static class MyThreadFactory implements ThreadFactory{
 
         private final static AtomicInteger SEQ = new AtomicInteger();
@@ -89,6 +94,7 @@ public class ExecutorServiceExample1 {
         public Thread newThread(Runnable r) {
             Thread t1 = new Thread(r);
             t1.setName("Thread -> " + SEQ.getAndIncrement());
+            // 设置线程未捕获异常的异常处理
             t1.setUncaughtExceptionHandler((t,e)->{
                 System.out.println("*********************************************");
 
