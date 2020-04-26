@@ -38,7 +38,9 @@ public class LockFreeQueue<E> {
     }
 
     public void addLast(E element) {
-        if (element == null) throw new NullPointerException("not allow add null");
+        if (element == null) {
+            throw new NullPointerException("not allow add null");
+        }
         Node<E> newNode = new Node<>(element);
         //保证插入操作原子性的关键
         Node<E> pres = tail.getAndSet(newNode);
@@ -55,9 +57,10 @@ public class LockFreeQueue<E> {
             //保证remove线程安全的核心
         } while (valueNode != null && !head.compareAndSet(headNode, valueNode));
         //head是否与tail重合
-        E value = (valueNode != null ? valueNode.element : null);
-        if (valueNode != null) {
-            valueNode.element = null;
+        E value = (headNode != null ? headNode.element : null);
+
+        if (headNode != null) {
+            headNode.element = null;
         }
         return value;
     }
@@ -91,7 +94,9 @@ public class LockFreeQueue<E> {
                     e.printStackTrace();
                 }
                 String result = lockFreeQueue.removeFirst();
-                if (result == null) continue;
+                if (result == null) {
+                    continue;
+                }
                 System.out.println("result:" + result);
                 data.put(result, System.currentTimeMillis());
                 count--;

@@ -41,17 +41,17 @@ public class CompletableFutureExample3 {
      * 等待两个任务完成的结果，然后组合成新的Future并返回
      */
     private static void testCombine() {
-        CompletableFuture.supplyAsync(()->{
+        CompletableFuture.supplyAsync(() -> {
             System.out.println("Combine-1-start");
             sleepSeconds(2);
             System.out.println("Combine-1-end");
             return "Combine-1";
-        }).thenCombine(CompletableFuture.supplyAsync(()->{
+        }).thenCombine(CompletableFuture.supplyAsync(() -> {
             System.out.println("Combine-2-start");
             sleepSeconds(5);
             System.out.println("Combine-2-end");
             return 10;
-        }),(s,i)->i-s.length()>0).whenComplete((result,e)->{
+        }), (s, i) -> i - s.length() > 0).whenComplete((result, e) -> {
             System.out.println(result);
             System.out.println("=========over========");
         });
@@ -110,17 +110,21 @@ public class CompletableFutureExample3 {
      * 等待所有结果执行返程并返回
      */
     private static void testThenAcceptBoth() {
-        CompletableFuture.supplyAsync(() -> {
-            System.out.println("AcceptBoth-1-start");
-            sleepSeconds(3);
-            System.out.println("AcceptBoth-1-end");
-            return "AcceptBoth-1";
-        }).thenAcceptBoth(CompletableFuture.supplyAsync(() -> {
-            System.out.println("AcceptBoth-2-start");
-            sleepSeconds(5);
-            System.out.println("AcceptBoth-2-end");
-            return 100;
-        }), (s, t) -> System.out.println(s + "--" + t));
+        CompletableFuture.supplyAsync(
+                () -> {
+                    System.out.println("AcceptBoth-1-start");
+                    sleepSeconds(3);
+                    System.out.println("AcceptBoth-1-end");
+                    return "AcceptBoth-1";
+                }
+        ).thenAcceptBoth(CompletableFuture.supplyAsync(
+                () -> {
+                    System.out.println("AcceptBoth-2-start");
+                    sleepSeconds(5);
+                    System.out.println("AcceptBoth-2-end");
+                    return 100;
+                }
+        ), (s, t) -> System.out.println(s + "--" + t));
     }
 
     private static void sleepSeconds(long seconds) {

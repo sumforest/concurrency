@@ -12,7 +12,31 @@ import java.util.concurrent.atomic.AtomicInteger;
 /**
  * @Author: Sen
  * @Date: 2019/12/20 03:05
- * @Description:
+ * @Description: 测试跳表和ConcurrentHashMap的性能
+ * class java.util.concurrent.ConcurrentHashMap测试结果：
+ * 线程数=10, 花费时间=113ms
+ * 线程数=20, 花费时间=93ms
+ * 线程数=30, 花费时间=93ms
+ * 线程数=40, 花费时间=95ms
+ * 线程数=50, 花费时间=94ms
+ * 线程数=60, 花费时间=97ms
+ * 线程数=70, 花费时间=98ms
+ * 线程数=80, 花费时间=98ms
+ * 线程数=90, 花费时间=98ms
+ * 线程数=100, 花费时间=97ms
+ * ******************************************************************
+ * class java.util.concurrent.ConcurrentSkipListMap测试结果：
+ * 线程数=10, 花费时间=94ms
+ * 线程数=20, 花费时间=74ms
+ * 线程数=30, 花费时间=80ms
+ * 线程数=40, 花费时间=74ms
+ * 线程数=50, 花费时间=83ms
+ * 线程数=60, 花费时间=89ms
+ * 线程数=70, 花费时间=84ms
+ * 线程数=80, 花费时间=84ms
+ * 线程数=90, 花费时间=85ms
+ * 线程数=100, 花费时间=85ms
+ * ******************************************************************
  */
 public class ConcurrentHashMapVSConcurrentSkipListMap {
 

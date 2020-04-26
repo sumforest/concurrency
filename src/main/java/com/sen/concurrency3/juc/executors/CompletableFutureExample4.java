@@ -14,19 +14,25 @@ import java.util.concurrent.TimeUnit;
 public class CompletableFutureExample4 {
 
     public static void main(String[] args) throws InterruptedException, ExecutionException {
-        // testGetNow()
-        // testComplete()
+        // System.out.println(testGetNow().getNow("预先准备的结果"));
+        // testComplete();
         // System.out.println(future.complete("World"));
         // CompletableFuture<String> future = testJoin();
         // TimeUnit.SECONDS.sleep(1);
         // System.out.println(future.join());
         // System.out.println("=================");
         // testObtrudeException();
+
+        // 测试CompletableFuture异常处理
         CompletableFuture<String> future = testErrorHandler();
         System.out.println("====================" + future.get());
         Thread.currentThread().join();
     }
 
+    /**
+     * {@link CompletableFuture}设置异常处理
+     * @return
+     */
     private static CompletableFuture<String> testErrorHandler() {
         CompletableFuture<String> future = CompletableFuture.supplyAsync(() -> {
             System.out.println(Thread.currentThread().getName() + " in");
@@ -108,7 +114,7 @@ public class CompletableFutureExample4 {
     }
 
     /**
-     * 调用getDown()立马返回设定好的值
+     * 调用getNow()立马返回设定好的值
      * @return
      */
     private static CompletableFuture<String> testGetNow() {

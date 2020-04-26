@@ -3,7 +3,7 @@ package com.sen.concurrency3.juc.collections.custom;
 /**
  * @Author: Sen
  * @Date: 2019/12/18 22:11
- * @Description:
+ * @Description: 带权栈
  */
 public class PriorityLinkedList<T extends Comparable<T>> {
 
@@ -20,8 +20,9 @@ public class PriorityLinkedList<T extends Comparable<T>> {
     public boolean contains(T t) {
         Node<T> current = root;
         while (current != null) {
-            if (t == current.t)
+            if (t == current.t) {
                 return true;
+            }
             current = current.next;
         }
         return false;
@@ -35,6 +36,11 @@ public class PriorityLinkedList<T extends Comparable<T>> {
         return size;
     }
 
+    /**
+     * 添加节点按权进行排序，升序排序
+     * @param t
+     * @return
+     */
     public PriorityLinkedList<T> addFirst(T t) {
         Node<T> newNode = new Node<>(t);
         Node<T> pre = null;
@@ -43,14 +49,17 @@ public class PriorityLinkedList<T extends Comparable<T>> {
             root = newNode;
             return this;
         }
+        // 添加的节点权比当前节点权值大，寻找合适的位置
         while (current != null && t.compareTo(current.t) > 0) {
             pre = current;
             current = current.next;
         }
+        // 添加节点的权值最小
         if (pre == null) {
             newNode.next = root;
             root = newNode;
         } else {
+            // 添加节点到合适的位置
             Node<T> temp = pre.next;
             pre.next = newNode;
             newNode.next = temp;
@@ -65,10 +74,11 @@ public class PriorityLinkedList<T extends Comparable<T>> {
         return temp;
     }
 
+    @Override
     public String toString() {
-        if (isEmpty())
+        if (isEmpty()) {
             return "[]";
-        else {
+        } else {
             StringBuilder builder = new StringBuilder("[");
             Node<T> current = root;
             while (current != null) {

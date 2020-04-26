@@ -11,7 +11,7 @@ public class ArrayBlockingQueueExample<T> {
 
     /**
      * 特点：1.有边界，大小固定；
-     *       2.FIFO
+     *      2.FIFO
      * @param capacity
      * @return
      */

@@ -22,7 +22,7 @@ public class SimpleSkipList {
 
     private int size;
 
-    private int hight = 1;
+    private int height = 1;
 
     public SimpleSkipList() {
         this.head = new Node(null, HEAD_TYPE);
@@ -32,6 +32,11 @@ public class SimpleSkipList {
         this.random = new Random(System.currentTimeMillis());
     }
 
+    /**
+     * 寻找插入节点的合适位置（最底层的节点）
+     * @param element
+     * @return 返回节点的取值范围：current.value <= element < current.right.value
+     */
     private Node find(Integer element) {
         Node current = head;
         for (; ; ) {
@@ -46,7 +51,8 @@ public class SimpleSkipList {
                 break;
             }
         }
-        return current;  //current.value <= element < current.right.value;
+        //current.value <= element < current.right.value;
+        return current;
     }
 
     /**
@@ -65,9 +71,9 @@ public class SimpleSkipList {
         //随机算法是否提高
         int currentHeight = 1;
         while (random.nextDouble() <= 0.3d) {
-            //当前高度高于原来的高度时直接将提高的节点和头尾节点建立关系
-            if (currentHeight >= hight) {
-                hight++;
+            //当前高度高于原来的高度时直接将提高的节点和头尾节点建立关系，即初次提高和已经提高到height+1层时
+            if (currentHeight >= height) {
+                height++;
                 Node newHead = new Node(null, HEAD_TYPE);
                 Node newTail = new Node(null, TAIL_TYPE);
 
@@ -78,7 +84,7 @@ public class SimpleSkipList {
                 newTail.down = tail;
                 tail.up = newTail;
                 newTail.left = newHead;
-                //更新头部尾部
+                //更新头部尾部，把头尾标记指向提高的头尾
                 head = newHead;
                 tail = newTail;
             }
@@ -105,10 +111,10 @@ public class SimpleSkipList {
 
     public void show(){
         Node upright = head;
-        int i = hight;
+        int i = height;
         while (upright != null) {
             Node crosswise = upright.right;
-            System.out.printf("Total height[%d],currentHeight[%d] ", hight, i--);
+            System.out.printf("Total height[%d],currentHeight[%d] ", height, i--);
             while (crosswise.value != null) {
                 System.out.printf("-->%d",crosswise.value);
                 crosswise = crosswise.right;

@@ -16,8 +16,9 @@ public class CompletableFutureExample2 {
         // testRunAfterBoth();
         // System.out.println(testRunAsync().get());
         // System.out.println(testSupplyAsync().get());
-        // System.out.println("anyOf result:"+testAnyOf().get());
+        // System.out.println("anyOf result:" + testAnyOf().get());
         testAllOf();
+        // main线程阻塞
         Thread.currentThread().join();
     }
 
@@ -73,18 +74,21 @@ public class CompletableFutureExample2 {
     }
 
     /**
-     * @return 返回任意一个执行结果，其他线程继续执行
+     * @return 返回任意一个执行结果，其他线程不再执行
      */
     private static Future<?> testAnyOf() {
-       return CompletableFuture.anyOf(CompletableFuture.runAsync(() -> {
-                    System.out.println("1==========start");
-                    try {
-                        TimeUnit.SECONDS.sleep(5);
-                        System.out.println("1==========End");
-                    } catch (InterruptedException e) {
-                        e.printStackTrace();
-                    }
-                }).whenComplete((v, t) -> System.out.println("-----------over-----------")),
+        return CompletableFuture.anyOf(
+                CompletableFuture.runAsync(
+                        () -> {
+                            System.out.println("1==========start");
+                            try {
+                                TimeUnit.SECONDS.sleep(5);
+                                System.out.println("1==========End");
+                            } catch (InterruptedException e) {
+                                e.printStackTrace();
+                            }
+                        }
+                ).whenComplete((v, t) -> System.out.println("-----------over-----------")),
                 CompletableFuture.supplyAsync(
                         () -> {
                             System.out.println("2*************start");
@@ -95,14 +99,17 @@ public class CompletableFutureExample2 {
                                 e.printStackTrace();
                             }
                             return "Hello";
-                        }).whenComplete((v, t) -> System.out.println(v + "===========finished==========")));
+                        }
+                ).whenComplete((v, t) -> System.out.println(v + "===========finished=========="))
+        );
     }
 
     /**
      * 没有返回值，只关心是否执行完成
      */
     private static void testAllOf() {
-        CompletableFuture.allOf(CompletableFuture.runAsync(() -> {
+        CompletableFuture.allOf(CompletableFuture.runAsync(
+                () -> {
                     System.out.println("1==========start");
                     try {
                         TimeUnit.SECONDS.sleep(5);
@@ -110,7 +117,8 @@ public class CompletableFutureExample2 {
                     } catch (InterruptedException e) {
                         e.printStackTrace();
                     }
-                }).whenComplete((v, t) -> System.out.println("-----------over-----------")),
+                }
+                ).whenComplete((v, t) -> System.out.println("-----------over-----------")),
                 CompletableFuture.supplyAsync(
                         () -> {
                             System.out.println("2*************start");
@@ -121,6 +129,7 @@ public class CompletableFutureExample2 {
                                 e.printStackTrace();
                             }
                             return "Hello";
-                        }).whenComplete((v, t) -> System.out.println(v + "===========finished==========")));
+                        }
+                ).whenComplete((v, t) -> System.out.println(v + "===========finished==========")));
     }
 }

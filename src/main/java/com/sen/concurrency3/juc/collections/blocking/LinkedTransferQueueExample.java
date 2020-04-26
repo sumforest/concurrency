@@ -11,7 +11,7 @@ public class LinkedTransferQueueExample {
 
     /**
      * 特点：
-     * 1.无边界的队列FIFo
+     * 1.无边界的队列FIFO
      * 2.可以确保任务被执行
      * @param <T>
      * @return

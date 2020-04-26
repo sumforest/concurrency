@@ -44,20 +44,25 @@ public class MyQueue<E> {
         Node<E> newNode = new Node<>(element);
         last.next = newNode;
         last = newNode;
-        if (size == 0)
+        if (size == 0) {
             first = newNode;
+        }
         size++;
         return this;
     }
 
     public E removeFist() {
-        if (size == 0) return null;
+        if (size == 0) {
+            return null;
+        }
         Node<E> temp = first;
         first = first.next;
+        // 释放内存
         temp.next = null;
         size--;
-        if (size == 0)
+        if (size == 0) {
             last = null;
+        }
         return temp.getElement();
     }
 

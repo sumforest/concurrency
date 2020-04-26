@@ -9,7 +9,7 @@ import java.util.concurrent.locks.ReentrantLock;
 /**
  * @Author: Sen
  * @Date: 2019/12/20 14:34
- * @Description:
+ * @Description: 手动实现CopyOnWriteMap
  */
 public class CopyOnWriteMap<K,V> implements Map<K,V> {
 
@@ -46,12 +46,20 @@ public class CopyOnWriteMap<K,V> implements Map<K,V> {
         return map.get(key);
     }
 
+    /**
+     * 重写put方法
+     * @param key
+     * @param value
+     * @return
+     */
     @Override
     public V put(K key, V value) {
+        lock.lock();
         try {
-            lock.lock();
+            // 创建一个map副本
             Map<K,V> newMap = new HashMap<>(map);
             newMap.put(key, value);
+            // 把map的引用指向新的map
             map = newMap;
         }finally {
             lock.unlock();
@@ -59,12 +67,19 @@ public class CopyOnWriteMap<K,V> implements Map<K,V> {
         return value;
     }
 
+    /**
+     * 重写remove
+     * @param key
+     * @return
+     */
     @Override
     public V remove(Object key) {
+        lock.lock();
         try {
-            lock.lock();
+            // 创建一个map副本
             Map<K,V> newMap = new HashMap<>(map);
             V oldValue = newMap.remove(key);
+            // 把map的引用指向新的map
             map = newMap;
             return oldValue;
         }finally {
@@ -74,10 +89,12 @@ public class CopyOnWriteMap<K,V> implements Map<K,V> {
 
     @Override
     public void putAll(Map<? extends K, ? extends V> m) {
+        lock.lock();
         try{
-            lock.lock();
+            // 创建一个map副本
             Map<K,V> newMap = new HashMap<>(map);
             newMap.putAll(m);
+            // 把map的引用指向新的map
             map = newMap;
         }finally {
             lock.unlock();
@@ -86,8 +103,9 @@ public class CopyOnWriteMap<K,V> implements Map<K,V> {
 
     @Override
     public void clear() {
+        lock.lock();
         try {
-            lock.lock();
+            // 直接把map引用指向一个全新的map
             map = new HashMap<>();
         }finally {
             lock.unlock();

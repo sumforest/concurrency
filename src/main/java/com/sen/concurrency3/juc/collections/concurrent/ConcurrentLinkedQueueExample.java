@@ -10,7 +10,7 @@ import java.util.concurrent.ConcurrentLinkedQueue;
 public class ConcurrentLinkedQueueExample {
 
     /**
-     * 当需要拿集合是否作为循环条件时首选{@link ConcurrentLinkedQueue#isEmpty()}它的判断条件是头不为空则不为空
+     * 当需要拿集合是否空作为循环条件时首选{@link ConcurrentLinkedQueue#isEmpty()}它的判断条件是头不为空则不为空
      * 效率高，而{@link ConcurrentLinkedQueue#size()}作为循环条件每次移除一个元素时遍历一遍集合，效率会很低
      * @param args
      */
@@ -26,7 +26,7 @@ public class ConcurrentLinkedQueueExample {
             System.out.println(linkedQueue.poll());
         }
         //花费时间14002ms
-       /* while (linkedQueue.size() > 0) {
+        /*while (linkedQueue.size() > 0) {
             System.out.println(linkedQueue.poll());
         }*/
         System.out.println(System.currentTimeMillis() - statTime);
@@ -36,7 +36,7 @@ public class ConcurrentLinkedQueueExample {
      * 判断字符串是否为空
      * @param s
      */
-    public static void testEqual_Lenth_IsEmpty(String s) {
+    public static void testEqualLengthIsEmpty(String s) {
         //效率极低，一个一个的去遍历字符
         if (null != s && !"".equals(s)) {
 

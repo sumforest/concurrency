@@ -7,7 +7,7 @@ import java.util.concurrent.atomic.AtomicInteger;
 /**
  * @Author: Sen
  * @Date: 2019/12/20 03:05
- * @Description:
+ * @Description: 测试ConcurrentLinkedQueue、CopyOnWriteArrayList、Collections.synchronizedList的性能
  */
 public class ConcurrentListPerformanceTest {
 
