@@ -31,5 +31,7 @@ public class ThreadCloseGraceful1 {
         work.start();
         Thread.sleep(5_000);
         Worker.close();
+        System.out.println("worker thread has been closed");
+        Thread.sleep(1_000);
     }
 }

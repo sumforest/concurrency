@@ -14,19 +14,19 @@ public class SimpleThreadApi2 {
     public static void main(String[] args) {
         Thread t1 = new Thread(() -> {
             for (int i = 0; i < 1000; i++) {
-                Optional.of(Thread.currentThread().getName() + "->index:"+i).ifPresent(System.out::println);
+                Optional.of(Thread.currentThread().getName() + "->index:" + i).ifPresent(System.out::println);
             }
         });
 
         Thread t2 = new Thread(() -> {
             for (int i = 0; i < 1000; i++) {
-                Optional.of(Thread.currentThread().getName() + "->index:"+i).ifPresent(System.out::println);
+                Optional.of(Thread.currentThread().getName() + "->index:" + i).ifPresent(System.out::println);
             }
         });
 
         Thread t3 = new Thread(() -> {
             for (int i = 0; i < 1000; i++) {
-                Optional.of(Thread.currentThread().getName() + "->index:"+i).ifPresent(System.out::println);
+                Optional.of(Thread.currentThread().getName() + "->index:" + i).ifPresent(System.out::println);
             }
         });
         t1.setPriority(Thread.MAX_PRIORITY);

@@ -5,7 +5,7 @@ import java.util.Optional;
 /**
  * @Author: Sen
  * @Date: 2019/12/7 02:30
- * @Description: {@link Thread} {@code t1.join(100,20)}设置等待的时间=100ms+20ns，超过设置的等待时间后还么完成
+ * @Description: {@link Thread} {@code t1.join(100,20)}设置等待的时间=100ms+20ns，超过设置的等待时间后还没完成
  * 那么父线程不再等待继续往下执行。
  */
 public class ThreadJoin2 {

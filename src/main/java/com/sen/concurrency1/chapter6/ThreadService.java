@@ -23,7 +23,7 @@ public class ThreadService {
             } catch (InterruptedException e) {
                 // e.printStackTrace();
             }
-            //执行完成或者抛出异常，标记执行完成
+            // 执行完成或者抛出异常，标记执行完成
             isEnd = true;
         });
         crater.start();

@@ -18,7 +18,10 @@ public class PhaserExample1 {
         final Phaser phaser = new Phaser();
         IntStream.rangeClosed(1, 5).boxed().map(i -> phaser).forEach(PhaserTask::new);
         phaser.register();
-        // 所有参与者都到达后经行下一个阶段
+        // 所有参与者都到达后经行
+        //
+        //
+        // 下一个阶段
         phaser.arriveAndAwaitAdvance();
         System.out.println("All worker is finished");
     }

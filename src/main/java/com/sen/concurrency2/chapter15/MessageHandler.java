@@ -8,7 +8,7 @@ import java.util.concurrent.Executors;
 /**
  * @Author: Sen
  * @Date: 2019/12/10 23:23
- * @Description:
+ * @Description: 线程池的shutdown方法在线程池调用shutdown前提交的任务全部执行完在释放线程池
  */
 public class MessageHandler {
 
